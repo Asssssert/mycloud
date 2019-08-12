@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class LoginControllerImpl implements LoginController {
     @Override
     public ResponseData login(String username, String password) {
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        UsernamePasswordToken token = new UsernamePasswordToken(username, new Md5Hash(password).toString());
         try {
             subject.login(token);
         } catch (AccountException e) {
