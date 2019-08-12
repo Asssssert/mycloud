@@ -12,6 +12,7 @@ public interface PermissionController {
     public ResponseData add(@RequestBody PermissionAdd params);
 
     @DeleteMapping(value = "/del/{ids}")
+
     public ResponseData del(@PathVariable(value = "ids") Integer[] ids);
 
     @PutMapping(value = "/upd")
