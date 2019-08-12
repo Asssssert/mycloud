@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleGetDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleListDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountUpd.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountUpd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleUpd.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleUpd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,11 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+            <state relative-caret-position="313">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -81,7 +80,6 @@
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/utils/Constant.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/MyErrorController.java" />
         <option value="$PROJECT_DIR$/Readme.md" />
@@ -111,6 +109,7 @@
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" />
       </list>
     </option>
   </component>
@@ -200,39 +199,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authority" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -331,7 +298,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565578427110</updated>
-      <workItem from="1565578430188" duration="14505000" />
+      <workItem from="1565578430188" duration="14849000" />
     </task>
     <task id="LOCAL-00001" summary="添加md文件">
       <created>1565596162036</created>
@@ -361,11 +328,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565600766851</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="权限模块-角色管理（完成）">
+      <created>1565602115451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565602115451</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14505000" />
+    <option name="totallyTimeSpent" value="14849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -377,7 +351,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" weight="0.329718" />
@@ -389,7 +363,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29392624" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29392624" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36944744" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -414,7 +388,8 @@
     <MESSAGE value="修改MD和权限模块添加MD" />
     <MESSAGE value="权限模块-账号管理（增删改查接口完成）" />
     <MESSAGE value="权限模块-账号管理（增加无法删除管理员账号的功能）" />
-    <option name="LAST_COMMIT_MESSAGE" value="权限模块-账号管理（增加无法删除管理员账号的功能）" />
+    <MESSAGE value="权限模块-角色管理（完成）" />
+    <option name="LAST_COMMIT_MESSAGE" value="权限模块-角色管理（完成）" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java">
@@ -591,13 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
           <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -808,8 +776,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        <state relative-caret-position="313">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
