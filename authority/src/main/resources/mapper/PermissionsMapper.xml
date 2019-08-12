@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iilei.authority.mapper.PermissionsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.iilei.authority.entity.Permissions">
+        <id column="id" property="id" />
+        <result column="parentId" property="parentId" />
+        <result column="type" property="type" />
+        <result column="name" property="name" />
+        <result column="resource" property="resource" />
+        <result column="method" property="method" />
+        <result column="url" property="url" />
+        <result column="describes" property="describes" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+</mapper>
