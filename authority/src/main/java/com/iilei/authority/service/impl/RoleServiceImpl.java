@@ -86,16 +86,16 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
 
     @Override
     public Page<RoleListDto> listByPage(Integer page, Integer size) {
-        Page accounts = selectPage(PageUtils.pageSizeCheck(page, size));
-        List<Role> records = accounts.getRecords();
+        Page roles = selectPage(PageUtils.pageSizeCheck(page, size));
+        List<Role> records = roles.getRecords();
         List<RoleListDto> dtoList = Lists.newArrayList();
         records.forEach(account -> {
             RoleListDto dto = DataUtils.copyProperties(account, new RoleListDto());
             dtoList.add(dto);
         });
-        accounts.setRecords(dtoList);
-        accounts.setTotal(selectCount(null));
-        return accounts;
+        roles.setRecords(dtoList);
+        roles.setTotal(selectCount(null));
+        return roles;
     }
 
     /**

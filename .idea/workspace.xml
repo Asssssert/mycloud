@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="">
+    <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="权限模块-权限管理&#10;1、添加进过滤器">
+      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionGetDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionUpd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,10 +32,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java">
+        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="432">
+              <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -33,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="408">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -52,7 +71,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>MD5</find>
+      <find>roleService</find>
     </findStrings>
+    <replaceStrings>
+      <replace>permissionsService</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,11 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/authority/pom.xml" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/entity/Account.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/AuthorityApplication.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/exception/ParamException.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/utils/BeanValidator.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/utils/PageUtils.java" />
@@ -75,10 +93,7 @@
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Account_roleServiceImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRole_permissionsService.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Role_permissionsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/utils/Constant.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/MyErrorController.java" />
@@ -105,10 +120,19 @@
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleGetDto.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleListDto.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionUpd.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionAdd.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionGetDto.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionListDto.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" />
       </list>
     </option>
@@ -228,18 +252,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.iilei.authority.dto.role" />
+      <recent name="com.iilei.authority.dto.permission" />
       <recent name="com.iilei.authority.controller.impl" />
+      <recent name="com.iilei.authority.params.permission" />
+      <recent name="com.iilei.authority.dto.role" />
       <recent name="com.iilei.authority.params.role" />
-      <recent name="com.iilei.authority.params.account" />
-      <recent name="com.iilei.authority.exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.iilei.authority.params.permission" />
       <recent name="com.iilei.authority.params.role" />
       <recent name="com.iilei.authority.dto.account" />
       <recent name="exception" />
       <recent name="com.iilei.authority.controller" />
-      <recent name="com.iilei.authority.advice" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\project\mycloud\authority\src\main\resources\mapper" />
@@ -298,7 +322,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565578427110</updated>
-      <workItem from="1565578430188" duration="14849000" />
+      <workItem from="1565578430188" duration="15741000" />
     </task>
     <task id="LOCAL-00001" summary="添加md文件">
       <created>1565596162036</created>
@@ -335,11 +359,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565602115451</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="权限模块-角色管理&#10;1、添加进过滤器">
+      <created>1565602448722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565602448722</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14849000" />
+    <option name="totallyTimeSpent" value="15741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -389,75 +420,10 @@
     <MESSAGE value="权限模块-账号管理（增删改查接口完成）" />
     <MESSAGE value="权限模块-账号管理（增加无法删除管理员账号的功能）" />
     <MESSAGE value="权限模块-角色管理（完成）" />
-    <option name="LAST_COMMIT_MESSAGE" value="权限模块-角色管理（完成）" />
+    <MESSAGE value="权限模块-角色管理&#10;1、添加进过滤器" />
+    <option name="LAST_COMMIT_MESSAGE" value="权限模块-角色管理&#10;1、添加进过滤器" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/realm/CachingRealm.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/subject/Subject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/authc/AbstractAuthenticator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="24" column="177" selection-start-line="24" selection-start-column="177" selection-end-line="24" selection-end-column="177" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/realm/AuthenticatingRealm.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="64" column="186" selection-start-line="64" selection-start-column="186" selection-end-line="64" selection-end-column="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/HttpStatus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycloud.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/authority/HELP.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -638,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/resources/mapper/Account_roleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -723,23 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -752,8 +694,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/RoleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="192">
+          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionUpd.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -762,29 +734,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="217">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionGetDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionListDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/entity/Permissions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="38" column="23" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="360">
+          <caret line="95" column="34" lean-forward="true" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="371">
+          <caret line="63" column="72" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="408">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
         </state>
       </provider>
     </entry>

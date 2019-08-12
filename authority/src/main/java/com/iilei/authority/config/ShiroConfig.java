@@ -25,6 +25,7 @@ public class ShiroConfig {
         filterRuleMap.put("/login/**", "anon");
         filterRuleMap.put("/account/**", "authc");
         filterRuleMap.put("/role/**", "authc");
+        filterRuleMap.put("/permission/**", "authc");
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
     }

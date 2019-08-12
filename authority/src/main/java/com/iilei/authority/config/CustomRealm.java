@@ -72,7 +72,7 @@ public class CustomRealm extends AuthorizingRealm {
             rps.forEach(role_permissions -> {
                 Permissions p = permissionsService.findById(role_permissions.getPid());
                 if (p.getParentId() != 0) {
-                    permissions.add(p.getName());
+                    permissions.add(p.getResource());
                 }
             });
         });
