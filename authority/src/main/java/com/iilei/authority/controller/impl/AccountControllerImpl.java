@@ -42,7 +42,7 @@ public class AccountControllerImpl implements AccountController {
         try {
             accountService.upd(params);
         } catch (Exception e) {
-            return ResponseData.fail(20004, e.getMessage());
+            return ResponseData.fail(20003, e.getMessage());
         }
         return ResponseData.success("修改成功");
     }

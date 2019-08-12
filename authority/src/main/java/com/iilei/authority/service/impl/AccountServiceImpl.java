@@ -81,10 +81,10 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     public void upd(AccountUpd params) {
         BeanValidator.check(params);
         Account a = checkById(params.getId());
-        Account account = DataUtils.copyProperties(params, a);
+        DataUtils.copyProperties(params, a);
         a.setPassword(new Md5Hash(a.getPassword()).toString());//加密
         a.setUpdate_time(new Date());
-        updateAllColumnById(account);
+        updateAllColumnById(a);
     }
 
 

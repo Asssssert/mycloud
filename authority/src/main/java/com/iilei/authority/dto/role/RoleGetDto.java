@@ -1,15 +1,13 @@
-package com.iilei.authority.params.role;
+package com.iilei.authority.dto.role;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @ToString
-public class RoleUpd {
+public class RoleGetDto {
     private Integer id;
 
     /**
@@ -21,6 +19,5 @@ public class RoleUpd {
      * 名称
      */
     private String name;
-
 
 }

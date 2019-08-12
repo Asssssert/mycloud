@@ -54,9 +54,4 @@ public class AccountAdd {
      * 创建时间
      */
     private Date create_time;
-
-    /**
-     * 修改时间
-     */
-    private Date update_time;
 }
