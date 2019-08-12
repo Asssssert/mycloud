@@ -13,7 +13,6 @@ import com.iilei.authority.params.account.AccountAdd;
 import com.iilei.authority.params.account.AccountUpd;
 import com.iilei.authority.service.IAccountService;
 import com.iilei.authority.utils.BeanValidator;
-import com.iilei.authority.utils.Constant;
 import com.iilei.authority.utils.DataUtils;
 import com.iilei.authority.utils.PageUtils;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -68,7 +67,10 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     @Override
     public void del(Integer[] ids) {
         for (Integer id : ids) {
-            checkById(id);
+            Account account = checkById(id);
+            if (account.getLevel() == 1) {
+                throw new ParamException("id为【" + id + "】的用户不能删除");
+            }
         }
         for (Integer id : ids) {
             deleteById(id);
@@ -108,7 +110,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     }
 
     @Override
-    public void lock(Integer[] ids,Integer lock) {
+    public void lock(Integer[] ids, Integer lock) {
         for (Integer id : ids) {
             checkById(id);
         }

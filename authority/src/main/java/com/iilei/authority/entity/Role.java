@@ -42,6 +42,11 @@ public class Role extends Model<Role> {
 
     private Date update_time;
 
+    /**
+     * 角色等级
+     */
+    private Integer level;
+
     public Integer getId() {
         return id;
     }
@@ -84,6 +89,13 @@ public class Role extends Model<Role> {
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
     }
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
     @Override
     protected Serializable pkVal() {
@@ -99,6 +111,7 @@ public class Role extends Model<Role> {
         ", lock=" + lock +
         ", create_time=" + create_time +
         ", update_time=" + update_time +
+        ", level=" + level +
         "}";
     }
 }

@@ -73,6 +73,11 @@ public class Account extends Model<Account> {
      */
     private Date update_time;
 
+    /**
+     * 账号等级
+     */
+    private Integer level;
+
     public Integer getId() {
         return id;
     }
@@ -150,6 +155,13 @@ public class Account extends Model<Account> {
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
     }
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
     @Override
     protected Serializable pkVal() {
@@ -170,6 +182,7 @@ public class Account extends Model<Account> {
         ", phone=" + phone +
         ", create_time=" + create_time +
         ", update_time=" + update_time +
+        ", level=" + level +
         "}";
     }
 }

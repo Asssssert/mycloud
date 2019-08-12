@@ -30,6 +30,6 @@ public interface IAccountService extends IService<Account> {
 
     Page<Account> listByPage(Integer page, Integer size);
 
-    void lock(Integer[] ids,Integer lock);
+    void lock(Integer[] ids, Integer lock);
 
 }

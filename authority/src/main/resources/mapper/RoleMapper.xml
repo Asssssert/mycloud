@@ -10,6 +10,7 @@
         <result column="lock" property="lock" />
         <result column="create_time" property="create_time" />
         <result column="update_time" property="update_time" />
+        <result column="level" property="level" />
     </resultMap>
 
 </mapper>
