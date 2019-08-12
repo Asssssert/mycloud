@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 12/08/2019 18:17:35
+ Date: 12/08/2019 18:19:03
 */
 
 SET NAMES utf8mb4;
@@ -83,19 +83,19 @@ INSERT INTO `user_permissions` VALUES (3, 1, 2, '修改用户', 'account:upd', '
 INSERT INTO `user_permissions` VALUES (4, 1, 2, '批量删除用户', 'account:del', 'DELETE', '/account/del', '批量删除用户', '2019-08-12 18:06:51', '2019-08-12 18:06:51', 1);
 INSERT INTO `user_permissions` VALUES (5, 1, 2, '根据ID获取用户', 'account:get', 'GET', '/account/get', '根据ID获取用户', '2019-08-12 18:07:17', '2019-08-12 18:07:17', 1);
 INSERT INTO `user_permissions` VALUES (6, 1, 2, '用户列表（分页）', 'account:list', 'GET', '/account/list', '用户列表（分页）', '2019-08-12 18:07:37', '2019-08-12 18:07:37', 1);
-INSERT INTO `user_permissions` VALUES (7, 1, 2, '批量修改账号状态', 'account:lock', 'PATCH', '/account/lock', '批量修改账号状态', '2019-08-12 18:11:51', '2019-08-12 18:11:51', 2);
-INSERT INTO `user_permissions` VALUES (8, 0, 1, '角色管理', '', '', '', '', '2019-08-12 18:12:12', '2019-08-12 18:12:12', 2);
-INSERT INTO `user_permissions` VALUES (9, 7, 2, '添加角色', 'role:add', 'POST', '/role/add', '添加角色', '2019-08-12 18:12:47', '2019-08-12 18:12:47', 2);
-INSERT INTO `user_permissions` VALUES (10, 7, 2, '根据ID修改角色', 'role:upd', 'PUT', '/role/upd', '根据ID修改角色', '2019-08-12 18:13:25', '2019-08-12 18:13:25', 2);
-INSERT INTO `user_permissions` VALUES (11, 7, 2, '根据ID批量删除角色', 'role:del', 'DELETE', '/role/del', '根据ID批量删除角色', '2019-08-12 18:13:47', '2019-08-12 18:13:47', 2);
-INSERT INTO `user_permissions` VALUES (12, 7, 2, '根据ID查找角色', 'role:get', 'GET', '/role/get', '根据ID查找角色', '2019-08-12 18:14:22', '2019-08-12 18:14:22', 2);
-INSERT INTO `user_permissions` VALUES (13, 7, 2, '列表（分页）', 'role:list', 'GET', '/role/list', '列表（分页）', '2019-08-12 18:14:41', '2019-08-12 18:14:41', 2);
-INSERT INTO `user_permissions` VALUES (14, 0, 1, '权限管理', '', '', '', '', '2019-08-12 18:15:21', '2019-08-12 18:15:21', 2);
-INSERT INTO `user_permissions` VALUES (15, 14, 2, '添加权限', 'permission:add', 'POST', '/permission/add', '添加权限', '2019-08-12 18:15:59', '2019-08-12 18:15:59', 2);
-INSERT INTO `user_permissions` VALUES (16, 14, 2, '根据ID修改权限', 'permission:upd', 'PATCH', '/permission/upd', '根据ID修改权限', '2019-08-12 18:16:17', '2019-08-12 18:16:17', 2);
-INSERT INTO `user_permissions` VALUES (17, 14, 2, '根据ID批量删除权限', 'permission:del', 'DELETE', '/permission/del', '根据ID批量删除权限', '2019-08-12 18:16:38', '2019-08-12 18:16:38', 2);
-INSERT INTO `user_permissions` VALUES (18, 14, 2, '根据ID获取权限', 'permission:get', 'GET', '/permission/get', '根据ID获取权限', '2019-08-12 18:17:00', '2019-08-12 18:17:00', 2);
-INSERT INTO `user_permissions` VALUES (19, 14, 2, '列表（分页）', 'permission:list', 'GET', '/permission/list', '列表（分页）', '2019-08-12 18:17:20', '2019-08-12 18:17:20', 2);
+INSERT INTO `user_permissions` VALUES (7, 1, 2, '批量修改账号状态', 'account:lock', 'PATCH', '/account/lock', '批量修改账号状态', '2019-08-12 18:11:51', '2019-08-12 18:11:51', 1);
+INSERT INTO `user_permissions` VALUES (8, 0, 1, '角色管理', '', '', '', '', '2019-08-12 18:12:12', '2019-08-12 18:12:12', 1);
+INSERT INTO `user_permissions` VALUES (9, 7, 2, '添加角色', 'role:add', 'POST', '/role/add', '添加角色', '2019-08-12 18:12:47', '2019-08-12 18:12:47', 1);
+INSERT INTO `user_permissions` VALUES (10, 7, 2, '根据ID修改角色', 'role:upd', 'PUT', '/role/upd', '根据ID修改角色', '2019-08-12 18:13:25', '2019-08-12 18:13:25', 1);
+INSERT INTO `user_permissions` VALUES (11, 7, 2, '根据ID批量删除角色', 'role:del', 'DELETE', '/role/del', '根据ID批量删除角色', '2019-08-12 18:13:47', '2019-08-12 18:13:47', 1);
+INSERT INTO `user_permissions` VALUES (12, 7, 2, '根据ID查找角色', 'role:get', 'GET', '/role/get', '根据ID查找角色', '2019-08-12 18:14:22', '2019-08-12 18:14:22', 1);
+INSERT INTO `user_permissions` VALUES (13, 7, 2, '列表（分页）', 'role:list', 'GET', '/role/list', '列表（分页）', '2019-08-12 18:14:41', '2019-08-12 18:14:41', 1);
+INSERT INTO `user_permissions` VALUES (14, 0, 1, '权限管理', '', '', '', '', '2019-08-12 18:15:21', '2019-08-12 18:15:21', 1);
+INSERT INTO `user_permissions` VALUES (15, 14, 2, '添加权限', 'permission:add', 'POST', '/permission/add', '添加权限', '2019-08-12 18:15:59', '2019-08-12 18:15:59', 1);
+INSERT INTO `user_permissions` VALUES (16, 14, 2, '根据ID修改权限', 'permission:upd', 'PATCH', '/permission/upd', '根据ID修改权限', '2019-08-12 18:16:17', '2019-08-12 18:16:17', 1);
+INSERT INTO `user_permissions` VALUES (17, 14, 2, '根据ID批量删除权限', 'permission:del', 'DELETE', '/permission/del', '根据ID批量删除权限', '2019-08-12 18:16:38', '2019-08-12 18:16:38', 1);
+INSERT INTO `user_permissions` VALUES (18, 14, 2, '根据ID获取权限', 'permission:get', 'GET', '/permission/get', '根据ID获取权限', '2019-08-12 18:17:00', '2019-08-12 18:17:00', 1);
+INSERT INTO `user_permissions` VALUES (19, 14, 2, '列表（分页）', 'permission:list', 'GET', '/permission/list', '列表（分页）', '2019-08-12 18:17:20', '2019-08-12 18:17:20', 1);
 
 -- ----------------------------
 -- Table structure for user_role
