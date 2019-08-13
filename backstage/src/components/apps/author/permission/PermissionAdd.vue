@@ -1,10 +1,10 @@
 <template>
-    <router-view></router-view>
+  <div>PermissionAdd</div>
 </template>
 
 <script>
   export default {
-    name: "Main",
+    name: "PermissionAdd",
     components: {},
     data() {
       return {}
@@ -12,7 +12,6 @@
     mounted: function () {
     },
     methods: {},
-    filters: {}
   }
 </script>
 

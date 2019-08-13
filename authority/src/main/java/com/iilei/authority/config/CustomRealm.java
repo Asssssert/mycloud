@@ -65,16 +65,6 @@ public class CustomRealm extends AuthorizingRealm {
         }
         //刷新时间
         redisService.expire(username, 24 * 60 * 60 * 1000);//一天
-//        String username = (String) authenticationToken.getPrincipal();
-//        String password = new String((char[]) authenticationToken.getCredentials());
-//        Account login = accountService.login(username, password);
-//        if (login == null) {
-//            throw new AccountException("用户名或密码不正确");
-//        }
-//        if (login.getLock() == ACCOUNT_LOCK) {
-//            throw new LockedAccountException("该用户已被锁定");
-//        }
-//        return new SimpleAuthenticationInfo(username, password, getName());
         return new SimpleAuthenticationInfo(token, token, getName());
     }
 

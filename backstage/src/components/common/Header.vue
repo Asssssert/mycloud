@@ -15,9 +15,7 @@
 </template>
 
 <script>
-  import store from "../../vuex/store";
   import http from 'assets/js/http';
-  import api from 'assets/js/api';
 
   export default {
     mixins: [http],
@@ -25,35 +23,14 @@
     components: {},
     data() {
       return {
-        user: store.getters.user,
-      }
-    },
-    mounted: function () {
-      // this.getUser();
-    },
-    methods: {
-      getUser() {
-        this.apiGet(api.userGetByToken)
-          .then(resp => {
-            let user = resp.data;
-            store.dispatch('upUser', user);
-            this.user = user;
-            // store.dispatch('getUser');
-          })
-      },
-      handleCommand(command) {
-        switch (command) {
-          case 'b':
-            this.apiGet(api.logout)
-              .then(resp => {
-                _g.notification("success", resp.msg);
-                store.dispatch("logout");
-                _g.toPageByPath('/login');
-              });
-            break;
+        user: {
+          nickname: ""
         }
       }
     },
+    mounted: function () {
+    },
+    methods: {},
     filters: {}
   }
 </script>

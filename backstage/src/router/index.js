@@ -13,6 +13,9 @@ const Login = resolve => require(['@/components/account/Login'], resolve);//登�
 const ForgetPWD = resolve => require(['@/components/account/ForgetPWD'], resolve);//密码找回
 //主页
 const Sheet = resolve => require(['@/components/apps/Sheet'], resolve);//主页
+const AccountManage = resolve => require(['@/components/apps/author/account/AccountManage'], resolve);//用户管理
+const RoleManage = resolve => require(['@/components/apps/author/role/RoleManage'], resolve);//角色管理
+const PermissionManage = resolve => require(['@/components/apps/author/permission/PermissionManage'], resolve);//权限管理
 export default new Router({
   routes: [
     {path: '/', redirect: 'login'},
@@ -31,6 +34,9 @@ export default new Router({
           },
           children: [
             {path: "sheet", name: 'sheet', component: Sheet},
+            {path: "accountManage", name: 'accountManage', component: AccountManage},
+            {path: "roleManage", name: 'roleManage', component: RoleManage},
+            {path: "permissionManage", name: 'permissionManage', component: PermissionManage},
           ]
         }
       ]

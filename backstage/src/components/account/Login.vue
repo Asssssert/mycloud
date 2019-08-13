@@ -84,6 +84,7 @@
               } else {
                 Lockr.set('autoLogin', {autoLogin: false});
               }
+              store.dispatch("upDefaultActive", "sheet");
               _g.toPageByName('sheet');
             });
           }

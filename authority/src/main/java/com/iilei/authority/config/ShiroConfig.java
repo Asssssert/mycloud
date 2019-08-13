@@ -34,10 +34,10 @@ public class ShiroConfig {
 //        factoryBean.setLoginUrl("/login/error");
         Map<String, String> filterRuleMap = new HashMap<>();
         filterRuleMap.put("/login/**", "anon");
-        filterRuleMap.put("/account/**", "authc");
-        filterRuleMap.put("/role/**", "authc");
-        filterRuleMap.put("/permission/**", "authc");
         filterRuleMap.put("/**", "jwt");
+//        filterRuleMap.put("/account/**", "authc");
+//        filterRuleMap.put("/role/**", "authc");
+//        filterRuleMap.put("/permission/**", "authc");
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
     }

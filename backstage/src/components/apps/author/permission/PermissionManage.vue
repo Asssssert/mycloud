@@ -1,10 +1,10 @@
 <template>
-    <router-view></router-view>
+  <div>PermissionManage</div>
 </template>
 
 <script>
   export default {
-    name: "Main",
+    name: "PermissionManage",
     components: {},
     data() {
       return {}
@@ -12,7 +12,6 @@
     mounted: function () {
     },
     methods: {},
-    filters: {}
   }
 </script>
 

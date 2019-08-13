@@ -18,7 +18,6 @@
 <script>
   import store from "../../vuex/store";
   import http from 'assets/js/http';
-  import api from 'assets/js/api';
   import {aMenu} from 'assets/js/mock'
 
   export default {
@@ -41,13 +40,13 @@
         //   .then(resp => {
         //     let menuTree = _g.menuTree(resp.data,0)
         //     this.menu = menuTree;
-            this.menu = aMenu;
+        this.menu = aMenu;
         //   })
       },
       initMenu() {
         store.dispatch("getDefaultActive");
         this.defaultActive = store.getters.defaultActive;
-        _g.toPageByPath(this.defaultActive)
+        // _g.toPageByName(this.defaultActive)
       },
       select(key) {
         store.dispatch("upDefaultActive", key);
