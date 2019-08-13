@@ -18,11 +18,4 @@ public class ExceptionHandlerAdvice {
         return ResponseData.fail(HttpStatus.UNAUTHORIZED.value(), "你没有该权限");
     }
 
-//    @ExceptionHandler(ShiroException.class)
-//    @ResponseStatus(HttpStatus.OK)
-//    public ResponseData shiroException(Exception exception) {
-//        System.out.println("shiroException:" + exception.getMessage());
-//        return ResponseData.fail(HttpStatus.FORBIDDEN.value(), exception.getMessage());
-//    }
-
 }
