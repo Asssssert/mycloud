@@ -47,7 +47,7 @@ import {
   MenuItemGroup,
   Message,
   MessageBox,
-  // Notification,
+  Notification,
   // Option,
   // OptionGroup,
   Pagination,
@@ -111,6 +111,7 @@ Vue.use(Button);
 // Vue.use(TableColumn);
 Vue.use(Form);
 Vue.use(FormItem);
+Vue.use(Notification);
 // Vue.use(Alert);
 // Vue.use(Slider);
 Vue.use(Row);

@@ -2,6 +2,7 @@ package com.iilei.authority.controller.impl;
 
 import com.iilei.authority.controller.LoginController;
 import com.iilei.authority.dto.ResponseData;
+import com.iilei.authority.params.account.AccountLogin;
 import com.iilei.authority.service.IAccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,10 @@ public class LoginControllerImpl implements LoginController {
     private HttpServletRequest hsr;
 
     @Override
-    public ResponseData login(String username, String password) {
+    public ResponseData login(AccountLogin params) {
         String token = null;
         try {
-            token = accountService.login(username, password);
+            token = accountService.login(params.getUsername(), params.getPassword());
         } catch (Exception e) {
             return ResponseData.fail(10001, e.getMessage());
         }

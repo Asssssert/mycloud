@@ -7,16 +7,19 @@
         </div>
         <el-form size="small" :hide-required-asterisk="true" :model="form" :rules="rules" ref="form"
                  class="demo-ruleForm">
-          <el-form-item  prop="username">
-            <el-input :placeholder="$t('message.pleaseEnterUsername')" v-model="form.username" :autofocus="true"></el-input>
+          <el-form-item prop="username">
+            <el-input :placeholder="$t('message.pleaseEnterUsername')" v-model="form.username"
+                      :autofocus="true"></el-input>
           </el-form-item>
-          <el-form-item  prop="password">
+          <el-form-item prop="password">
             <el-input :placeholder="$t('message.pleaseEnterPWD')" v-model="form.password" show-password></el-input>
           </el-form-item>
           <el-form-item>
             <el-checkbox v-model="form.autoLogin">{{$t('message.autoLogin')}}</el-checkbox>
             <el-button type="text" style="float: right;" @click="forgetPWD">{{$t('message.forgetPWD')}}</el-button>
-            <el-button type="primary" size="small" @click="submitForm('form')" style="width: 100%;" >{{$t('message.login')}}</el-button>
+            <el-button type="primary" size="small" @click="submitForm('form')" style="width: 100%;">
+              {{$t('message.login')}}
+            </el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -25,7 +28,11 @@
 </template>
 
 <script>
+  import http from 'assets/js/http';
+  import api from 'assets/js/api';
+
   export default {
+    mixins: [http],
     name: "Login",
     components: {},
     data() {
@@ -50,7 +57,7 @@
     },
     methods: {
       forgetPWD() {
-        _g.toPageByPath('forgetPWD');
+        _g.toPageByName('forgetPWD');
       },
       autoLogin() {
         let autoLogin = Lockr.get("autoLogin");
@@ -58,28 +65,27 @@
           if (autoLogin.autoLogin) {
             let token = Lockr.get('autoLogin').data;
             store.dispatch('upToken', token);
-            _g.toPageByPath('/index/sheet');
+            _g.toPageByName('sheet');
           }
         }
       },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            let password = md5(this.form.password);
             const data = {
               username: this.form.username,
-              password: password,
+              password: this.form.password,
             };
-            // this.apiPost(api.login, data).then(resp => {
-            //   _g.notification('success', resp.msg);
-            //   store.dispatch('upToken', resp.data);
-            //   if (this.form.autoLogin) {
-            //     Lockr.set('autoLogin', {autoLogin: true, data: resp.data});
-            //   } else {
-            //     Lockr.set('autoLogin', {autoLogin: false});
-            //   }
-            //   _g.toPageByPath('/index/userIndex');
-            // });
+            this.apiPost(api.login, data).then(resp => {
+              _g.notification('success', resp.msg);
+              store.dispatch('upToken', resp.data);
+              if (this.form.autoLogin) {
+                Lockr.set('autoLogin', {autoLogin: true, data: resp.data});
+              } else {
+                Lockr.set('autoLogin', {autoLogin: false});
+              }
+              _g.toPageByName('sheet');
+            });
           }
         });
       },
