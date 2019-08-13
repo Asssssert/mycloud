@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 13/08/2019 10:42:00
+ Date: 13/08/2019 16:01:50
 */
 
 SET NAMES utf8mb4;
@@ -35,12 +35,13 @@ CREATE TABLE `user_account`  (
   `update_time` datetime NOT NULL COMMENT '修改时间',
   `level` int(1) NOT NULL DEFAULT 2 COMMENT '账号等级',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_account
 -- ----------------------------
 INSERT INTO `user_account` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '管理员', '张三', 0, 0, 'admin@qq.com', '13555555555', '2019-08-12 16:35:57', '2019-08-12 16:35:57', 1);
+INSERT INTO `user_account` VALUES (2, 'ceshi', 'e10adc3949ba59abbe56e057f20f883e', '啊大', '张三', 0, 0, 'zhangsan@qq.com', '13555555555', '2019-08-13 10:47:40', '2019-08-13 10:47:40', 2);
 
 -- ----------------------------
 -- Table structure for user_account_role
@@ -53,12 +54,13 @@ CREATE TABLE `user_account_role`  (
   `create_time` datetime NULL DEFAULT NULL,
   `update_time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
+) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
 
 -- ----------------------------
 -- Records of user_account_role
 -- ----------------------------
 INSERT INTO `user_account_role` VALUES (1, 1, 1, '2019-08-13 10:08:11', '2019-08-13 10:08:11');
+INSERT INTO `user_account_role` VALUES (2, 2, 2, '2019-08-13 10:48:02', '2019-08-13 10:48:02');
 
 -- ----------------------------
 -- Table structure for user_permissions
@@ -121,12 +123,13 @@ CREATE TABLE `user_role`  (
   `update_time` datetime NOT NULL,
   `level` int(1) NOT NULL DEFAULT 2 COMMENT '角色等级',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
 INSERT INTO `user_role` VALUES (1, '管理员', 'admin', 0, '2019-08-12 17:24:02', '2019-08-12 17:24:02', 1);
+INSERT INTO `user_role` VALUES (2, '普通用户', 'user', 0, '2019-08-13 10:47:50', '2019-08-13 10:47:50', 2);
 
 -- ----------------------------
 -- Table structure for user_role_permissions
