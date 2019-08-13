@@ -15,6 +15,10 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+  redis:
+    database: 0
+    port: 6379
+    host: 127.0.0.1
 server:
   port: 8081
 mybatis-plus:
@@ -23,3 +27,4 @@ mybatis-plus:
   global-config:
     db-column-underline: false
     capital-mode: false
+

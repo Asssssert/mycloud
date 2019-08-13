@@ -1,13 +1,18 @@
 package com.iilei.authority.controller;
 
 import com.iilei.authority.dto.ResponseData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class MyErrorController implements ErrorController {
+    @Autowired
+    private HttpServletRequest httpServletRequest;
     private static final String ERROR_PATH = "/error";
 
     /**
@@ -19,7 +24,13 @@ public class MyErrorController implements ErrorController {
     @RequestMapping(value = ERROR_PATH)
     @ResponseBody
     public ResponseData handleError() {
-        return ResponseData.fail(404, "未找到该页面");
+        String error = (String) httpServletRequest.getAttribute("error");
+        if (error == null) {
+            return ResponseData.fail(404, null);
+        }else{
+            Integer error_code = (Integer) httpServletRequest.getAttribute("error_code");
+            return ResponseData.fail(error_code, error);
+        }
     }
 
     @Override

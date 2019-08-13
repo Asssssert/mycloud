@@ -12,14 +12,21 @@ import com.iilei.authority.mapper.AccountMapper;
 import com.iilei.authority.params.account.AccountAdd;
 import com.iilei.authority.params.account.AccountUpd;
 import com.iilei.authority.service.IAccountService;
+import com.iilei.authority.service.RedisService;
 import com.iilei.authority.utils.BeanValidator;
 import com.iilei.authority.utils.DataUtils;
+import com.iilei.authority.utils.JWTUtil;
 import com.iilei.authority.utils.PageUtils;
+import org.apache.shiro.authc.AccountException;
+import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.crypto.hash.Md5Hash;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+
+import static com.iilei.authority.utils.Constant.ACCOUNT_LOCK;
 
 /**
  * <p>
@@ -31,6 +38,8 @@ import java.util.List;
  */
 @Service
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
+    @Autowired
+    private RedisService redisService;
 
     @Override
     public Account findByUsername(String username) {
@@ -41,13 +50,27 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     }
 
     @Override
-    public Account login(String username, String password) {
+    public String login(String username, String password) {
         EntityWrapper<Account> wrapper = new EntityWrapper<>();
         wrapper
                 .eq("account", username)
-                .eq("password", password);
+                .eq("password", new Md5Hash(password).toString());
         Account account = selectOne(wrapper);
-        return account;
+        if (account == null) {
+            throw new AccountException("用户名或密码不正确");
+        }
+        if (account.getLock() == ACCOUNT_LOCK) {
+            throw new LockedAccountException("该用户已被锁定");
+        }
+        String token = JWTUtil.sign(username, account.getPassword());
+        redisService.set(username, token, 24 * 60 * 60 * 1000);//一天
+        return token;
+    }
+
+    @Override
+    public void logout(String token) {
+        String username = JWTUtil.getUsername(token);
+        redisService.del(username, token);
     }
 
     @Override

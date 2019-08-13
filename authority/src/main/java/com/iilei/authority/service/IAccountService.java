@@ -18,7 +18,9 @@ import com.iilei.authority.params.account.AccountUpd;
 public interface IAccountService extends IService<Account> {
     Account findByUsername(String username);
 
-    Account login(String username, String password);
+    String login(String username, String password);
+
+    void logout(String token);
 
     void add(AccountAdd params);
 
@@ -31,5 +33,6 @@ public interface IAccountService extends IService<Account> {
     Page<Account> listByPage(Integer page, Integer size);
 
     void lock(Integer[] ids, Integer lock);
+
 
 }

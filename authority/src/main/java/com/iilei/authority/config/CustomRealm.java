@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.iilei.authority.entity.Account;
 import com.iilei.authority.entity.*;
 import com.iilei.authority.service.*;
-import org.apache.shiro.SecurityUtils;
+import com.iilei.authority.utils.JWTUtil;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -13,8 +13,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-
-import static com.iilei.authority.utils.Constant.ACCOUNT_LOCK;
 
 public class CustomRealm extends AuthorizingRealm {
     @Autowired
@@ -27,16 +25,19 @@ public class CustomRealm extends AuthorizingRealm {
     private IRole_permissionsService role_permissionsService;
     @Autowired
     private IPermissionsService permissionsService;
+    @Autowired
+    private RedisService redisService;
 
     @Override
     public boolean supports(AuthenticationToken token) {
-        return super.supports(token);
+        return token instanceof JWTToken;
     }
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         System.out.println("权限");
-        String username = (String) SecurityUtils.getSubject().getPrincipal();
+        String token = (String) principalCollection.getPrimaryPrincipal();
+        String username = JWTUtil.getUsername(token);
         Account account = accountService.findByUsername(username);
         List<String> roles = Lists.newArrayList();
         List<String> permissions = Lists.newArrayList();
@@ -50,16 +51,31 @@ public class CustomRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         System.out.println("登录");
-        String username = (String) authenticationToken.getPrincipal();
-        String password = new String((char[]) authenticationToken.getCredentials());
-        Account login = accountService.login(username, password);
-        if (login == null) {
-            throw new AccountException("用户名或密码不正确");
+        String token = (String) authenticationToken.getCredentials();
+        if (token == null) {
+            throw new AccountException("token不能为空");
         }
-        if (login.getLock() == ACCOUNT_LOCK) {
-            throw new LockedAccountException("该用户已被锁定");
+        String username = JWTUtil.getUsername(token);
+        if (!redisService.hasKey(username)) {
+            throw new AccountException("token无效,请重新登录");
         }
-        return new SimpleAuthenticationInfo(username, password, getName());
+        String checkToken = (String) redisService.get(username);
+        if (!token.equals(checkToken)) {
+            throw new AccountException("登录失效");
+        }
+        //刷新时间
+        redisService.expire(username, 24 * 60 * 60 * 1000);//一天
+//        String username = (String) authenticationToken.getPrincipal();
+//        String password = new String((char[]) authenticationToken.getCredentials());
+//        Account login = accountService.login(username, password);
+//        if (login == null) {
+//            throw new AccountException("用户名或密码不正确");
+//        }
+//        if (login.getLock() == ACCOUNT_LOCK) {
+//            throw new LockedAccountException("该用户已被锁定");
+//        }
+//        return new SimpleAuthenticationInfo(username, password, getName());
+        return new SimpleAuthenticationInfo(token, token, getName());
     }
 
     //装配角色和权限
