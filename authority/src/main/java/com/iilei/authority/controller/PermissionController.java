@@ -23,4 +23,10 @@ public interface PermissionController {
 
     @GetMapping(value = "/list")
     public ResponseData listByPage(Integer page, Integer size);
+
+    @GetMapping(value = "/list/type")
+    public ResponseData listByPageByType(Integer type, Integer page, Integer size);
+
+    @GetMapping(value = "/list/pid")
+    public ResponseData listByPid(Integer pid, Integer page, Integer size);
 }

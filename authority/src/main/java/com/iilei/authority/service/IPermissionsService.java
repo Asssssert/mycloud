@@ -1,20 +1,16 @@
 package com.iilei.authority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.service.IService;
 import com.iilei.authority.dto.permission.PermissionGetDto;
 import com.iilei.authority.dto.permission.PermissionListDto;
-import com.iilei.authority.dto.role.RoleGetDto;
-import com.iilei.authority.dto.role.RoleListDto;
 import com.iilei.authority.entity.Permissions;
-import com.baomidou.mybatisplus.service.IService;
 import com.iilei.authority.params.permission.PermissionAdd;
 import com.iilei.authority.params.permission.PermissionUpd;
-import com.iilei.authority.params.role.RoleAdd;
-import com.iilei.authority.params.role.RoleUpd;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author LiLei
@@ -32,4 +28,8 @@ public interface IPermissionsService extends IService<Permissions> {
     PermissionGetDto getById(Integer id);
 
     Page<PermissionListDto> listByPage(Integer page, Integer size);
+
+    Page<PermissionListDto> listByType(Integer type, Integer page, Integer size);
+
+    Page<PermissionListDto> listByPid(Integer pid, Integer page, Integer size);
 }

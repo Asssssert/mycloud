@@ -86,6 +86,26 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     @Override
     public Page<PermissionListDto> listByPage(Integer page, Integer size) {
         Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size));
+        return getPermissionListDtoPage(permissionss);
+    }
+
+    @Override
+    public Page<PermissionListDto> listByType(Integer type, Integer page, Integer size) {
+        EntityWrapper<Permissions> wr = new EntityWrapper<>();
+        wr.eq("type", type);
+        Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size), wr);
+        return getPermissionListDtoPage(permissionss);
+    }
+
+    @Override
+    public Page<PermissionListDto> listByPid(Integer pid, Integer page, Integer size) {
+        EntityWrapper<Permissions> wr = new EntityWrapper<>();
+        wr.eq("parentId", pid);
+        Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size), wr);
+        return getPermissionListDtoPage(permissionss);
+    }
+
+    private Page<PermissionListDto> getPermissionListDtoPage(Page permissionss) {
         List<Permissions> records = permissionss.getRecords();
         List<PermissionListDto> dtoList = Lists.newArrayList();
         records.forEach(account -> {

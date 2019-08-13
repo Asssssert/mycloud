@@ -12,16 +12,6 @@ public class PermissionUpd {
     private Integer id;
 
     /**
-     * 父权限ID
-     */
-    private Integer parentId;
-
-    /**
-     * 权限类型  1、分类，2、权限
-     */
-    private Integer type;
-
-    /**
      * 权限名称
      */
     private String name;
