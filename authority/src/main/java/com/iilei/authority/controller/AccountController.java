@@ -2,7 +2,9 @@ package com.iilei.authority.controller;
 
 import com.iilei.authority.dto.ResponseData;
 import com.iilei.authority.params.account.AccountAdd;
+import com.iilei.authority.params.account.AccountAddRole;
 import com.iilei.authority.params.account.AccountUpd;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(value = "/account")
@@ -29,5 +31,12 @@ public interface AccountController {
 
     @GetMapping(value = "/list")
     public ResponseData listByPage(Integer page, Integer size);
+
+    @PostMapping(value = "/add/role")
+    public ResponseData addRole(@RequestBody AccountAddRole params);
+
+    @DeleteMapping(value = "/del/role/{aid}")
+    public ResponseData delRole(@PathVariable(value = "aid") Integer aid, @Param(value = "rids") Integer[] rids);
+
 
 }

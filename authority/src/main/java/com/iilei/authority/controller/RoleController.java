@@ -2,7 +2,9 @@ package com.iilei.authority.controller;
 
 import com.iilei.authority.dto.ResponseData;
 import com.iilei.authority.params.role.RoleAdd;
+import com.iilei.authority.params.role.RoleAddPermission;
 import com.iilei.authority.params.role.RoleUpd;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(value = "/role")
@@ -22,5 +24,11 @@ public interface RoleController {
 
     @GetMapping(value = "/list")
     public ResponseData listByPage(Integer page, Integer size);
+
+    @PostMapping(value = "/add/permission")
+    public ResponseData addPermission(@RequestBody RoleAddPermission params);
+
+    @DeleteMapping(value = "/del/permission/{rid}")
+    public ResponseData delPermissionByRid(@PathVariable(value = "rid") Integer rid, @Param(value = "pids") Integer[] pids);
 
 }

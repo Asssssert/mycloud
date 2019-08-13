@@ -4,8 +4,10 @@ import com.iilei.authority.controller.RoleController;
 import com.iilei.authority.dto.ResponseData;
 import com.iilei.authority.dto.role.RoleGetDto;
 import com.iilei.authority.params.role.RoleAdd;
+import com.iilei.authority.params.role.RoleAddPermission;
 import com.iilei.authority.params.role.RoleUpd;
 import com.iilei.authority.service.IRoleService;
+import com.iilei.authority.service.IRole_permissionsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class RoleControllerImpl implements RoleController {
     @Autowired
     private IRoleService roleService;
+    @Autowired
+    private IRole_permissionsService rolePermissionsService;
 
     @Override
     public ResponseData add(RoleAdd params) {
@@ -62,5 +66,25 @@ public class RoleControllerImpl implements RoleController {
     @Override
     public ResponseData listByPage(Integer page, Integer size) {
         return ResponseData.success(roleService.listByPage(page, size));
+    }
+
+    @Override
+    public ResponseData addPermission(RoleAddPermission params) {
+        try {
+            rolePermissionsService.addPermission(params);
+        } catch (Exception e) {
+            return ResponseData.fail(30001, e.getMessage());
+        }
+        return ResponseData.success("添加成功");
+    }
+
+    @Override
+    public ResponseData delPermissionByRid(Integer rid, Integer[] pids) {
+        try {
+            rolePermissionsService.delPermissionByRid(rid, pids);
+        } catch (Exception e) {
+            return ResponseData.fail(30002, e.getMessage());
+        }
+        return ResponseData.success("删除成功");
     }
 }

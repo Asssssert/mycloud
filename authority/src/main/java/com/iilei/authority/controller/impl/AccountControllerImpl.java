@@ -3,8 +3,10 @@ package com.iilei.authority.controller.impl;
 import com.iilei.authority.controller.AccountController;
 import com.iilei.authority.dto.ResponseData;
 import com.iilei.authority.params.account.AccountAdd;
+import com.iilei.authority.params.account.AccountAddRole;
 import com.iilei.authority.params.account.AccountUpd;
 import com.iilei.authority.service.IAccountService;
+import com.iilei.authority.service.IAccount_roleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountControllerImpl implements AccountController {
     @Autowired
     private IAccountService accountService;
+    @Autowired
+    private IAccount_roleService accountRoleService;
 
     @Override
     public ResponseData add(AccountAdd params) {
@@ -65,5 +69,25 @@ public class AccountControllerImpl implements AccountController {
     @Override
     public ResponseData listByPage(Integer page, Integer size) {
         return ResponseData.success(accountService.listByPage(page, size));
+    }
+
+    @Override
+    public ResponseData addRole(AccountAddRole params) {
+        try {
+            accountRoleService.addRole(params);
+        } catch (Exception e) {
+            return ResponseData.fail(20001, e.getMessage());
+        }
+        return ResponseData.success("添加成功");
+    }
+
+    @Override
+    public ResponseData delRole(Integer aid, Integer[] rids) {
+        try {
+            accountRoleService.delRoleByAid(aid, rids);
+        } catch (Exception e) {
+            return ResponseData.fail(20002, e.getMessage());
+        }
+        return ResponseData.success("删除成功");
     }
 }
