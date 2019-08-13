@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 12/08/2019 18:19:03
+ Date: 13/08/2019 10:42:00
 */
 
 SET NAMES utf8mb4;
@@ -53,7 +53,12 @@ CREATE TABLE `user_account_role`  (
   `create_time` datetime NULL DEFAULT NULL,
   `update_time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
+) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of user_account_role
+-- ----------------------------
+INSERT INTO `user_account_role` VALUES (1, 1, 1, '2019-08-13 10:08:11', '2019-08-13 10:08:11');
 
 -- ----------------------------
 -- Table structure for user_permissions
@@ -72,7 +77,7 @@ CREATE TABLE `user_permissions`  (
   `update_time` datetime NULL DEFAULT NULL,
   `level` int(1) NOT NULL DEFAULT 2 COMMENT '权限等级',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_permissions
@@ -96,6 +101,12 @@ INSERT INTO `user_permissions` VALUES (16, 14, 2, '根据ID修改权限', 'permi
 INSERT INTO `user_permissions` VALUES (17, 14, 2, '根据ID批量删除权限', 'permission:del', 'DELETE', '/permission/del', '根据ID批量删除权限', '2019-08-12 18:16:38', '2019-08-12 18:16:38', 1);
 INSERT INTO `user_permissions` VALUES (18, 14, 2, '根据ID获取权限', 'permission:get', 'GET', '/permission/get', '根据ID获取权限', '2019-08-12 18:17:00', '2019-08-12 18:17:00', 1);
 INSERT INTO `user_permissions` VALUES (19, 14, 2, '列表（分页）', 'permission:list', 'GET', '/permission/list', '列表（分页）', '2019-08-12 18:17:20', '2019-08-12 18:17:20', 1);
+INSERT INTO `user_permissions` VALUES (20, 14, 2, '根据类型查找数据（分页）', 'permission:list:type', 'GET', '/permission/list/type', '根据类型查找数据（分页）', '2019-08-13 09:41:25', '2019-08-13 09:41:25', 1);
+INSERT INTO `user_permissions` VALUES (21, 14, 2, '根据ID查找子类数据（分页）', 'permission:list:pid', 'GET', '/permission/list/pid', '根据ID查找子类数据（分页）', '2019-08-13 09:41:42', '2019-08-13 09:41:42', 1);
+INSERT INTO `user_permissions` VALUES (22, 1, 2, '给用户添加角色', 'account:add:role', 'POST', '/account/add/role', '给用户添加角色', '2019-08-13 10:10:13', '2019-08-13 10:10:13', 1);
+INSERT INTO `user_permissions` VALUES (23, 1, 2, '根据ID批量删除用户的角色', 'account:del:role', 'DELETE', '/account/del/role', '根据ID批量删除用户的角色', '2019-08-13 10:11:10', '2019-08-13 10:11:10', 1);
+INSERT INTO `user_permissions` VALUES (24, 7, 2, '根据ID批量删除角色的权限', 'role:del:permission', 'DELETE', '/role/del/permission', '根据ID批量删除角色的权限', '2019-08-13 10:39:28', '2019-08-13 10:39:28', 1);
+INSERT INTO `user_permissions` VALUES (25, 7, 2, '批量给角色添加权限', 'role:add:permission', 'POST', '/role/add/permission', '批量给角色添加权限', '2019-08-13 10:39:51', '2019-08-13 10:39:51', 1);
 
 -- ----------------------------
 -- Table structure for user_role
@@ -110,7 +121,7 @@ CREATE TABLE `user_role`  (
   `update_time` datetime NOT NULL,
   `level` int(1) NOT NULL DEFAULT 2 COMMENT '角色等级',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_role
@@ -128,6 +139,32 @@ CREATE TABLE `user_role_permissions`  (
   `create_time` datetime NULL DEFAULT NULL,
   `update_time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
+) ENGINE = MyISAM AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of user_role_permissions
+-- ----------------------------
+INSERT INTO `user_role_permissions` VALUES (1, 2, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (2, 3, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (3, 4, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (4, 5, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (5, 6, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (6, 7, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (7, 9, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (8, 10, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (9, 11, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (10, 12, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (11, 13, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (12, 15, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (13, 16, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (14, 17, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (15, 18, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (16, 19, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (17, 20, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (18, 21, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (19, 22, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (20, 23, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (21, 24, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
+INSERT INTO `user_role_permissions` VALUES (22, 25, 1, '2019-08-13 10:40:19', '2019-08-13 10:40:19');
 
 SET FOREIGN_KEY_CHECKS = 1;

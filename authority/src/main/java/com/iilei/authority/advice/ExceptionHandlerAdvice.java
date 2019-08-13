@@ -15,7 +15,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(UnauthorizedException.class)
     @ResponseStatus(HttpStatus.OK)
     public ResponseData unauthorizedException(Exception exception) {
-        return ResponseData.fail(HttpStatus.UNAUTHORIZED.value(), "没权限");
+        return ResponseData.fail(HttpStatus.UNAUTHORIZED.value(), "你没有该权限");
     }
 
 //    @ExceptionHandler(ShiroException.class)
