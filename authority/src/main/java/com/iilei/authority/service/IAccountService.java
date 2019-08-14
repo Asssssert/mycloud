@@ -3,6 +3,7 @@ package com.iilei.authority.service;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 import com.iilei.authority.dto.account.AccountGetDto;
+import com.iilei.authority.dto.account.AccountInfoDto;
 import com.iilei.authority.entity.Account;
 import com.iilei.authority.params.account.AccountAdd;
 import com.iilei.authority.params.account.AccountUpd;
@@ -17,6 +18,8 @@ import com.iilei.authority.params.account.AccountUpd;
  */
 public interface IAccountService extends IService<Account> {
     Account findByUsername(String username);
+
+    AccountInfoDto getUserInfoByToken(String token);
 
     String login(String username, String password);
 

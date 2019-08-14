@@ -1,10 +1,12 @@
 package com.iilei.authority.service.impl;
 
+import com.auth0.jwt.JWT;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
 import com.iilei.authority.dto.account.AccountGetDto;
+import com.iilei.authority.dto.account.AccountInfoDto;
 import com.iilei.authority.dto.account.AccountListDto;
 import com.iilei.authority.entity.Account;
 import com.iilei.authority.exception.ParamException;
@@ -47,6 +49,14 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         wrapper.eq("account", username);
         Account account = selectOne(wrapper);
         return account;
+    }
+
+    @Override
+    public AccountInfoDto getUserInfoByToken(String token) {
+        String username = JWTUtil.getUsername(token);
+        Account account = findByUsername(username);
+        AccountInfoDto dto = DataUtils.copyProperties(account, new AccountInfoDto());
+        return dto;
     }
 
     @Override
