@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class MyErrorController implements ErrorController {
+
     @Autowired
     private HttpServletRequest httpServletRequest;
     private static final String ERROR_PATH = "/error";

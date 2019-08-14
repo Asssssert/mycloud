@@ -63,7 +63,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         try {
             executeLogin(request, response);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             request.setAttribute("error", e.getMessage());
             request.setAttribute("error_code", 403);
         }
