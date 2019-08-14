@@ -29,6 +29,14 @@ public interface PermissionController {
     @RequiresPermissions("permission:list")
     public ResponseData listByPage(Integer page, Integer size);
 
+    @GetMapping(value = "/list/all")
+    @RequiresPermissions("permission:list:all")
+    public ResponseData listAll();
+
+    @GetMapping(value = "/list/rid/{rid}")
+    @RequiresPermissions("permission:list:rid")
+    public ResponseData listAllByRid(@PathVariable(value = "rid") Integer rid);
+
     @GetMapping(value = "/list/type")
     @RequiresPermissions("permission:list:type")
     public ResponseData listByPageByType(Integer type, Integer page, Integer size);

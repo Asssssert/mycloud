@@ -65,6 +65,16 @@ public class PermissionControllerImpl implements PermissionController {
     }
 
     @Override
+    public ResponseData listAll() {
+        return ResponseData.success(permissionsService.listAll());
+    }
+
+    @Override
+    public ResponseData listAllByRid(Integer rid) {
+        return ResponseData.success(permissionsService.listAllByRid(rid));
+    }
+
+    @Override
     public ResponseData listByPageByType(Integer type, Integer page, Integer size) {
         return ResponseData.success(permissionsService.listByType(type, page, size));
     }

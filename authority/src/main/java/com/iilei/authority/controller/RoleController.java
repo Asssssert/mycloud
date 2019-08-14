@@ -31,6 +31,14 @@ public interface RoleController {
     @RequiresPermissions("role:list")
     public ResponseData listByPage(Integer page, Integer size);
 
+    @GetMapping(value = "/list/all")
+    @RequiresPermissions("role:list:all")
+    public ResponseData listAll();
+
+    @GetMapping(value = "/list/aid/{aid}")
+    @RequiresPermissions("role:list:aid")
+    public ResponseData listAllByAid(@PathVariable(value = "aid") Integer aid);
+
     @PostMapping(value = "/add/permission")
     @RequiresPermissions("role:add:permission")
     public ResponseData addPermission(@RequestBody RoleAddPermission params);

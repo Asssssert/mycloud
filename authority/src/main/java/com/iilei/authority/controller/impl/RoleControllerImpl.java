@@ -69,6 +69,16 @@ public class RoleControllerImpl implements RoleController {
     }
 
     @Override
+    public ResponseData listAll() {
+        return ResponseData.success(roleService.listAll());
+    }
+
+    @Override
+    public ResponseData listAllByAid(Integer aid) {
+        return ResponseData.success(roleService.listAllByAid(aid));
+    }
+
+    @Override
     public ResponseData addPermission(RoleAddPermission params) {
         try {
             rolePermissionsService.addPermission(params);

@@ -2,11 +2,14 @@ package com.iilei.authority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.authority.dto.role.RoleAllDto;
 import com.iilei.authority.dto.role.RoleGetDto;
 import com.iilei.authority.dto.role.RoleListDto;
 import com.iilei.authority.entity.Role;
 import com.iilei.authority.params.role.RoleAdd;
 import com.iilei.authority.params.role.RoleUpd;
+
+import java.util.List;
 
 /**
  * <p>
@@ -28,4 +31,8 @@ public interface IRoleService extends IService<Role> {
     RoleGetDto getById(Integer id);
 
     Page<RoleListDto> listByPage(Integer page, Integer size);
+
+    List<RoleAllDto> listAll();
+
+    List<RoleAllDto> listAllByAid(Integer aid);
 }

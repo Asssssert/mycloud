@@ -2,11 +2,14 @@ package com.iilei.authority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.authority.dto.permission.PermissionAllDto;
 import com.iilei.authority.dto.permission.PermissionGetDto;
 import com.iilei.authority.dto.permission.PermissionListDto;
 import com.iilei.authority.entity.Permissions;
 import com.iilei.authority.params.permission.PermissionAdd;
 import com.iilei.authority.params.permission.PermissionUpd;
+
+import java.util.List;
 
 /**
  * <p>
@@ -32,4 +35,8 @@ public interface IPermissionsService extends IService<Permissions> {
     Page<PermissionListDto> listByType(Integer type, Integer page, Integer size);
 
     Page<PermissionListDto> listByPid(Integer pid, Integer page, Integer size);
+
+    List<PermissionAllDto> listAll();
+
+    List<PermissionAllDto> listAllByRid(Integer rid);
 }

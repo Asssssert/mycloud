@@ -4,10 +4,13 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
+import com.iilei.authority.dto.role.RoleAllDto;
 import com.iilei.authority.dto.role.RoleGetDto;
 import com.iilei.authority.dto.role.RoleListDto;
+import com.iilei.authority.entity.Account_role;
 import com.iilei.authority.entity.Role;
 import com.iilei.authority.exception.ParamException;
+import com.iilei.authority.mapper.Account_roleMapper;
 import com.iilei.authority.mapper.RoleMapper;
 import com.iilei.authority.params.role.RoleAdd;
 import com.iilei.authority.params.role.RoleUpd;
@@ -15,6 +18,7 @@ import com.iilei.authority.service.IRoleService;
 import com.iilei.authority.utils.BeanValidator;
 import com.iilei.authority.utils.DataUtils;
 import com.iilei.authority.utils.PageUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -30,6 +34,8 @@ import java.util.List;
  */
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IRoleService {
+    @Autowired
+    private Account_roleMapper accountRoleMapper;
 
     @Override
     public Role findById(Integer id) {
@@ -101,6 +107,30 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         roles.setRecords(dtoList);
         roles.setTotal(selectCount(null));
         return roles;
+    }
+
+    @Override
+    public List<RoleAllDto> listAll() {
+        List<Role> roles = selectList(null);
+        List<RoleAllDto> dtoList = Lists.newArrayList();
+        roles.forEach(role -> {
+            RoleAllDto dto = DataUtils.copyProperties(role, new RoleAllDto());
+            dtoList.add(dto);
+        });
+        return dtoList;
+    }
+
+    @Override
+    public List<RoleAllDto> listAllByAid(Integer aid) {
+        EntityWrapper<Account_role> wrapper = new EntityWrapper<>();
+        wrapper.eq("aid", aid);
+        List<Account_role> ars = accountRoleMapper.selectList(wrapper);
+        List<RoleAllDto> dtoList = Lists.newArrayList();
+        ars.forEach(account_role -> {
+            RoleAllDto dto = DataUtils.copyProperties(selectById(account_role.getRid()), new RoleAllDto());
+            dtoList.add(dto);
+        });
+        return dtoList;
     }
 
     /**
