@@ -63,6 +63,11 @@
                   type="text"
                   @click="handleDelete(scope.$index,scope.row)">删除
                 </el-button>
+                <el-button
+                  size="mini"
+                  type="text"
+                  @click="handleRole(scope.$index,scope.row)">角色管理
+                </el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -70,6 +75,7 @@
         <el-row>
           <div style="float:left;margin-top: 20px;">
             <el-button type="primary" size="small" @click="add">添加用户</el-button>
+            <el-button type="success" size="small" @click="locks">状态操作</el-button>
             <el-button type="danger" size="small" @click="batchDelete">批量删除</el-button>
           </div>
           <el-pagination
@@ -86,11 +92,13 @@
         </el-row>
         <el-row>
           <el-dialog :title="dialog.title"
-                     width="25%"
+                     width="30%"
                      :visible.sync="dialog.dialogTableVisible"
                      v-if='dialog.dialogTableVisible'>
-            <AccountAdd v-if="dialog.active==1" @mClose="mClose"></AccountAdd>
+            <AccountAdd v-if="dialog.active==1" :id="dialog.id" @mClose="mClose"></AccountAdd>
             <AccountUpd v-if="dialog.active==2" :id="dialog.id" @mClose="mClose"></AccountUpd>
+            <AccountLock v-if="dialog.active==3" :ids="ids" @mClose="mClose"></AccountLock>
+            <AccountRoleAdd v-if="dialog.active==4" :id="dialog.id" @mClose="mClose"></AccountRoleAdd>
           </el-dialog>
         </el-row>
       </div>
@@ -99,8 +107,10 @@
 </template>
 
 <script>
+  import AccountLock from '@/components/apps/author/account/AccountLock'
   import AccountAdd from '@/components/apps/author/account/AccountAdd'
   import AccountUpd from '@/components/apps/author/account/AccountUpd'
+  import AccountRoleAdd from '@/components/apps/author/account/AccountRoleAdd'
   import http from 'assets/js/http';
   import api from 'assets/js/api';
 
@@ -110,6 +120,8 @@
     components: {
       AccountAdd,
       AccountUpd,
+      AccountLock,
+      AccountRoleAdd,
     },
     data() {
       return {
@@ -135,8 +147,8 @@
     },
     methods: {
       batchDelete() {
-        if (this.selection.length <= 0) return _g.message("error", "请选择要删除的科目");
-        _g.meassageBox('warning', '警告', "确定删除这些科目吗？（删除后无法恢复）")
+        if (this.selection.length <= 0) return _g.message("error", "请选择要删除的用户");
+        _g.meassageBox('warning', '警告', "确定删除这些用户吗？（删除后无法恢复）")
           .then(() => {
             this.apiDelete(api.accountDel + "/" + this.ids)
               .then(resp => {
@@ -146,6 +158,12 @@
           })
           .catch(() => {
           });
+      },
+      locks() {
+        if (this.selection.length <= 0) return _g.message("error", "请选择要修改的用户");
+        this.dialog.title = "修改用户状态";
+        this.dialog.dialogTableVisible = true;
+        this.dialog.active = 3;
       },
       add() {
         this.dialog.title = "添加用户";
@@ -166,8 +184,14 @@
         this.dialog.active = 2;
         this.dialog.id = row.id;
       },
+      handleRole(index, row) {
+        this.dialog.title = "角色管理";
+        this.dialog.dialogTableVisible = true;
+        this.dialog.active = 4;
+        this.dialog.id = row.id;
+      },
       handleDelete(index, row) {
-        _g.meassageBox('warning', '警告', "确定删除该科目吗？（删除后无法恢复）")
+        _g.meassageBox('warning', '警告', "确定删除该用户吗？（删除后无法恢复）")
           .then(() => {
             this.apiDelete(api.accountDel + "/" + [row.id])
               .then(resp => {

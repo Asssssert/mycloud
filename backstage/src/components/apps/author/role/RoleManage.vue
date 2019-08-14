@@ -47,6 +47,11 @@
                   type="text"
                   @click="handleDelete(scope.$index,scope.row)">删除
                 </el-button>
+                <el-button
+                  size="mini"
+                  type="text"
+                  @click="handlePermission(scope.$index,scope.row)">权限管理
+                </el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -70,11 +75,12 @@
         </el-row>
         <el-row>
           <el-dialog :title="dialog.title"
-                     width="25%"
+                     width="30%"
                      :visible.sync="dialog.dialogTableVisible"
                      v-if='dialog.dialogTableVisible'>
             <RoleAdd v-if="dialog.active==1" @mClose="mClose"></RoleAdd>
             <RoleUpd v-if="dialog.active==2" :id="dialog.id" @mClose="mClose"></RoleUpd>
+            <RolePermissionAdd v-if="dialog.active==3" :id="dialog.id" @mClose="mClose"></RolePermissionAdd>
           </el-dialog>
         </el-row>
       </div>
@@ -85,6 +91,7 @@
 <script>
   import RoleAdd from '@/components/apps/author/role/RoleAdd'
   import RoleUpd from '@/components/apps/author/role/RoleUpd'
+  import RolePermissionAdd from '@/components/apps/author/role/RolePermissionAdd'
   import http from 'assets/js/http';
   import api from 'assets/js/api';
 
@@ -93,7 +100,8 @@
     name: "RoleManage",
     components: {
       RoleAdd,
-      RoleUpd
+      RoleUpd,
+      RolePermissionAdd,
     },
     data() {
       return {
@@ -152,6 +160,12 @@
         this.dialog.title = "编辑用户";
         this.dialog.dialogTableVisible = true;
         this.dialog.active = 2;
+        this.dialog.id = row.id;
+      },
+      handlePermission(index, row) {
+        this.dialog.title = "权限管理";
+        this.dialog.dialogTableVisible = true;
+        this.dialog.active = 3;
         this.dialog.id = row.id;
       },
       handleDelete(index, row) {
