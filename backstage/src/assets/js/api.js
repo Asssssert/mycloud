@@ -4,6 +4,8 @@ const port = '8081';
 const baseUrl = localhost + ":" + port;
 const api = {
   login: `${baseUrl}/login/login`,
+  logout: `${baseUrl}/login/logout`,
+  userInfo: `${baseUrl}/user/get/userInfo`,
   accountList: `${baseUrl}/account/list`,
   accountAdd: `${baseUrl}/account/add`,
   accountAddRole: `${baseUrl}/account/add/role`,

@@ -14,8 +14,8 @@ const actions = {
   upUser({commit}, value) {
     commit('upUser', value)
   },
-  getUser({commit}, value) {
-    commit('getUser', value)
+  getUser({commit}) {
+    commit('getUser')
   },
   logout({commit}) {
     commit('logout')

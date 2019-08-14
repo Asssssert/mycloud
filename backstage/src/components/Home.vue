@@ -32,7 +32,7 @@
 </script>
 
 <style scoped>
-  .el-header, .el-footer {
+  .el-footer {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;

@@ -1,21 +1,21 @@
 <template>
-  <div class="header">
-    <div class="h-name">
-      <el-dropdown size="small" placement="bottom-start" trigger="click" @command="handleCommand">
-      <span class="el-dropdown-link">
-        {{user.nickname}}<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="a">个人设置</el-dropdown-item>
-          <el-dropdown-item command="b">注销</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
+  <div class="bg">
+    <el-row style="width: 100px;float: right;margin-top: 20px;">
+      <el-col :span="12">
+      <span class="header-name icon-bt">
+      {{user.realname}}
+    </span>
+      </el-col>
+      <el-col :span="12">
+        <i class="el-icon-switch-button icon-bt" @click="exit"></i>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
   import http from 'assets/js/http';
+  import api from 'assets/js/api';
 
   export default {
     mixins: [http],
@@ -24,37 +24,50 @@
     data() {
       return {
         user: {
-          nickname: ""
+          realname: ""
         }
       }
     },
     mounted: function () {
+      this.getUserInfo();
     },
-    methods: {},
+    methods: {
+      getUserInfo() {
+        this.apiGet(api.userInfo)
+          .then(resp => {
+            let user = resp.data;
+            this.user = user;
+            store.dispatch('upUser', user);
+          })
+      },
+      exit() {
+        this.apiGet(api.logout)
+          .then(resp => {
+            _g.notification("success", resp.msg);
+            store.dispatch('logout');
+            _g.toPageByName('login');
+          })
+      }
+    },
     filters: {}
   }
 </script>
 
 <style scoped>
-
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409EFF;
-  }
-
-  .el-icon-arrow-down {
+  .header-name {
+    color: #3a8ee6;
     font-size: 12px;
   }
 
-  .h-name {
-    position: relative;
-    top: 50%;
-    transform: translate(100%, 80%);
-    margin-right: 150px;
+  .icon-bt:hover {
+    color: #3a8ee6;
+    cursor: pointer;
   }
 
-  .header {
-    overflow: hidden;
-    height: 75px;
+  .divider {
+    height: 1px;
+    background: #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 </style>

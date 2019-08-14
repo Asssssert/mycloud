@@ -20,8 +20,8 @@ const PermissionChildManage = resolve => require(['@/components/apps/author/perm
 export default new Router({
   routes: [
     {path: '/', redirect: 'login'},
-    {path: '/login', name: 'Login', component: Login},
-    {path: '/forgetPWD', name: 'ForgetPWD', component: ForgetPWD},
+    {path: '/login', name: 'login', component: Login},
+    {path: '/forgetPWD', name: 'forgetPWD', component: ForgetPWD},
     {
       path: 'home', name: 'home', component: Home, children: [
         {
