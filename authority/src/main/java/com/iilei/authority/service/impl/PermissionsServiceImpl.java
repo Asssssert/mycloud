@@ -74,6 +74,7 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     }
 
     private void delIds(List<Integer> delIds, Integer id) {
+
         EntityWrapper<Permissions> wr = new EntityWrapper<>();
         wr.eq("parentId", id);
         List<Permissions> delList = selectList(wr);
