@@ -19,6 +19,19 @@ export default {
       type: type
     })
   },
+  meassageBox(type, title, msg) {
+    return new Promise((resolve, reject) => {
+      bus.$confirm(msg, title, {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: type
+      }).then(() => {
+        resolve()
+      }).catch(() => {
+        reject();
+      });
+    });
+  },
   changeTree(data, parentId) {
     let itemArr = [];
     for (let i = 0; i < data.length; i++) {

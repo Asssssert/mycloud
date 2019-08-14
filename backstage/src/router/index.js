@@ -16,6 +16,7 @@ const Sheet = resolve => require(['@/components/apps/Sheet'], resolve);//主页
 const AccountManage = resolve => require(['@/components/apps/author/account/AccountManage'], resolve);//用户管理
 const RoleManage = resolve => require(['@/components/apps/author/role/RoleManage'], resolve);//角色管理
 const PermissionManage = resolve => require(['@/components/apps/author/permission/PermissionManage'], resolve);//权限管理
+const PermissionChildManage = resolve => require(['@/components/apps/author/permission/PermissionChildManage'], resolve);//子权限列表
 export default new Router({
   routes: [
     {path: '/', redirect: 'login'},
@@ -37,6 +38,7 @@ export default new Router({
             {path: "accountManage", name: 'accountManage', component: AccountManage},
             {path: "roleManage", name: 'roleManage', component: RoleManage},
             {path: "permissionManage", name: 'permissionManage', component: PermissionManage},
+            {path: "permissionChildManage", name: 'permissionChildManage', component: PermissionChildManage},
           ]
         }
       ]

@@ -35,7 +35,6 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        System.out.println("权限");
         String token = (String) principalCollection.getPrimaryPrincipal();
         String username = JWTUtil.getUsername(token);
         Account account = accountService.findByUsername(username);
@@ -50,7 +49,6 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        System.out.println("登录");
         String token = (String) authenticationToken.getCredentials();
         if (token == null) {
             throw new AccountException("token不能为空");

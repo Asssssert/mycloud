@@ -25,7 +25,7 @@ public interface AccountController {
 
     @PatchMapping(value = "/lock/{ids}")
     @RequiresPermissions("account:lock")
-    public ResponseData lock(@PathVariable(value = "ids") Integer[] ids, Integer lock);
+    public ResponseData lock(@PathVariable(value = "ids") Integer[] ids, @Param(value = "lock") Integer lock);
 
     @GetMapping(value = "/get/{id}")
     @RequiresPermissions("account:get")

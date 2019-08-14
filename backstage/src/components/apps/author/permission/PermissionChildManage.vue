@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-card>
-      <div slot="header" class="header-title">角色列表</div>
+      <div slot="header" class="header-title"><i class="el-icon-arrow-left" @click="$router.back(-1)"></i>子权限列表</div>
       <div>
         <el-row></el-row>
         <el-row>
@@ -20,23 +20,31 @@
                              align="center"
                              width="50"
                              label="ID"></el-table-column>
+            <el-table-column prop="parentId"
+                             align="center"
+                             :formatter="parentId"
+                             label="父权限ID"></el-table-column>
+            <el-table-column prop="type"
+                             align="center"
+                             :formatter="type"
+                             label="权限类型"></el-table-column>
             <el-table-column prop="name"
                              align="center"
-                             label="角色名"></el-table-column>
-            <el-table-column prop="nickname"
+                             label="权限名称"></el-table-column>
+            <el-table-column prop="resource"
                              align="center"
-                             label="角色名称"></el-table-column>
-            <el-table-column prop="lock"
+                             label="资源编码"></el-table-column>
+            <el-table-column prop="method"
                              align="center"
-                             :formatter="lock"
-                             label="账号状态"></el-table-column>
+                             label="请求方法"></el-table-column>
+            <el-table-column prop="url"
+                             align="center"
+                             label="请求地址"></el-table-column>
+            <el-table-column prop="describes"
+                             align="center"
+                             label="备注"></el-table-column>
             <el-table-column label="操作" fixed="right" width="200" align="center">
               <template slot-scope="scope">
-<!--                <el-button-->
-<!--                  size="mini"-->
-<!--                  type="text"-->
-<!--                  @click="handleLock(scope.$index, scope.row)">{{scope.row.lock==1 ? "启用" : "禁用"}}-->
-<!--                </el-button>-->
                 <el-button
                   size="mini"
                   type="text"
@@ -47,13 +55,20 @@
                   type="text"
                   @click="handleDelete(scope.$index,scope.row)">删除
                 </el-button>
+                <el-button
+                  :disabled="scope.row.type==2"
+                  size="mini"
+                  type="text"
+                  @click="handleChild(scope.$index,scope.row)">子权限
+                </el-button>
               </template>
             </el-table-column>
           </el-table>
         </el-row>
         <el-row>
           <div style="float:left;margin-top: 20px;">
-            <el-button type="primary" size="small" @click="add">添加角色</el-button>
+            <el-button type="success" size="small" @click="addType">添加类型</el-button>
+            <el-button type="primary" size="small" @click="addPermission">添加权限</el-button>
             <el-button type="danger" size="small" @click="batchDelete">批量删除</el-button>
           </div>
           <el-pagination
@@ -73,8 +88,9 @@
                      width="25%"
                      :visible.sync="dialog.dialogTableVisible"
                      v-if='dialog.dialogTableVisible'>
-            <RoleAdd v-if="dialog.active==1" @mClose="mClose"></RoleAdd>
-            <RoleUpd v-if="dialog.active==2" :id="dialog.id" @mClose="mClose"></RoleUpd>
+            <PermissionAddType v-if="dialog.active==1"  @mClose="mClose"></PermissionAddType>
+            <PermissionAddPermission v-if="dialog.active==2" @mClose="mClose"></PermissionAddPermission>
+            <PermissioniUpd v-if="dialog.active==3" :id="dialog.id" @mClose="mClose"></PermissioniUpd>
           </el-dialog>
         </el-row>
       </div>
@@ -83,17 +99,19 @@
 </template>
 
 <script>
-  import RoleAdd from '@/components/apps/author/role/RoleAdd'
-  import RoleUpd from '@/components/apps/author/role/RoleUpd'
+  import PermissionAddType from '@/components/apps/author/permission/PermissionAddType'
+  import PermissionAddPermission from '@/components/apps/author/permission/PermissionAddPermission'
+  import PermissioniUpd from '@/components/apps/author/permission/PermissioniUpd'
   import http from 'assets/js/http';
   import api from 'assets/js/api';
 
   export default {
     mixins: [http],
-    name: "RoleManage",
+    name: "PermissionChildManage",
     components: {
-      RoleAdd,
-      RoleUpd
+      PermissionAddType,
+      PermissionAddPermission,
+      PermissioniUpd,
     },
     data() {
       return {
@@ -101,6 +119,7 @@
           id: 0,
           title: '',
           active: 0,
+          type: 0,
           dialogTableVisible: false,
         },
         table: {
@@ -112,18 +131,21 @@
         total: 0,
         ids: [],
         selection: [],
+        query: [],
       }
     },
     mounted: function () {
-      this.getData();
+      let pid = Lockr.get('pid');
+      this.getData(pid);
     },
     methods: {
-      getData() {
+      getData(pid) {
         let data = {
           page: this.currentPage,
           size: this.pageSize,
+          pid: pid,
         };
-        this.apiGet(api.roleList, data)
+        this.apiGet(api.permissionListPid, data)
           .then(resp => {
             this.table.loading = false;
             this.table.data = resp.data.records;
@@ -132,35 +154,44 @@
       },
       batchDelete() {
         if (this.selection.length <= 0) return _g.message("error", "请选择要删除的科目");
-        _g.meassageBox('warning', '警告', "确定删除这些角色吗？（删除后无法恢复）")
+        _g.meassageBox('warning', '警告', "确定删除这些权限吗？（删除后无法恢复）")
           .then(() => {
-            this.apiDelete(api.roleDel + "/" + this.ids)
+            this.apiDelete(api.permissionDel + "/" + this.ids)
               .then(resp => {
                 _g.notification("success", resp.msg);
-                this.getData();
+                this.getData(Lockr.get('pid'));
               })
           })
           .catch(() => {
           });
       },
-      add() {
-        this.dialog.title = "添加用户";
+      addType() {
+        this.dialog.title = "添加类型";
         this.dialog.dialogTableVisible = true;
         this.dialog.active = 1;
       },
-      handleEdit(index, row) {
-        this.dialog.title = "编辑用户";
+      addPermission() {
+        this.dialog.title = "添加权限";
         this.dialog.dialogTableVisible = true;
         this.dialog.active = 2;
+      },
+      handleEdit(index, row) {
+        this.dialog.title = "编辑权限";
+        this.dialog.dialogTableVisible = true;
+        this.dialog.active = 3;
         this.dialog.id = row.id;
       },
+      handleChild(index, row) {
+        Lockr.set("pid", row.id);
+        this.getData(row.id);
+      },
       handleDelete(index, row) {
-        _g.meassageBox('warning', '警告', "确定删除该角色吗？（删除后无法恢复）")
+        _g.meassageBox('warning', '警告', "确定删除该权限吗？（删除后无法恢复）")
           .then(() => {
-            this.apiDelete(api.roleDel + "/" + [row.id])
+            this.apiDelete(api.permissionDel + "/" + [row.id])
               .then(resp => {
                 _g.notification("success", resp.msg);
-                this.getData();
+                this.getData(Lockr.get('pid'));
               })
           })
           .catch(() => {
@@ -176,21 +207,24 @@
       },
       handleSizeChange(pageSize) {
         this.pageSize = pageSize;
-        this.getData();
+        this.getData(Lockr.get('pid'));
       },
       handleCurrentChange(current) {
         this.currentPage = current;
-        this.getData();
+        this.getData(Lockr.get('pid'));
       },
       mClose() {
         this.dialog.title = "";
         this.dialog.dialogTableVisible = false;
         this.dialog.active = 0;
         this.dialog.id = 0;
-        this.getData();
+        this.getData(Lockr.get('pid'));
       },
-      lock(val) {
-        return val.lock == 0 ? "正常" : "禁用"
+      parentId(val) {
+        return val.parentId == 0 ? "无" : val.parentId
+      },
+      type(val) {
+        return val.type == 1 ? "分类" : "权限"
       },
     },
   }

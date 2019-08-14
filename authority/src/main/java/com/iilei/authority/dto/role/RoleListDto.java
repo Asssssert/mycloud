@@ -19,5 +19,5 @@ public class RoleListDto {
      * 名称
      */
     private String name;
-    private Integer level;
+    private Integer lock;
 }

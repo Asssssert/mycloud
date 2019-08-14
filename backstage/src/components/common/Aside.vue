@@ -1,18 +1,25 @@
 <template>
-  <el-menu
-    :default-active="defaultActive"
-    router
-    @select="select">
-    <el-submenu :index="item.path" v-for="item in menu" :key="item.path">
-      <template slot="title" :disabled="item.disabled">
-        <i :class="item.icon"></i>
-        <span>{{item.title}}</span>
-      </template>
-      <el-menu-item-group v-for="i in item.children" :key="i.path">
-        <el-menu-item :index="i.path" :disabled="i.disabled">{{i.title}}</el-menu-item>
-      </el-menu-item-group>
-    </el-submenu>
-  </el-menu>
+  <el-row>
+    <el-row>
+      <div class="logo">logo</div>
+    </el-row>
+    <el-row>
+      <el-menu
+        :default-active="defaultActive"
+        router
+        @select="select">
+        <el-submenu :index="item.path" v-for="item in menu" :key="item.path">
+          <template slot="title" :disabled="item.disabled">
+            <i :class="item.icon"></i>
+            <span>{{item.title}}</span>
+          </template>
+          <el-menu-item-group v-for="i in item.children" :key="i.path">
+            <el-menu-item :index="i.path" :disabled="i.disabled">{{i.title}}</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+      </el-menu>
+    </el-row>
+  </el-row>
 </template>
 
 <script>
@@ -57,5 +64,10 @@
 </script>
 
 <style scoped>
-
+  .logo {
+    background-color: #3a8ee6;
+    height: 80px;
+    color: #B3C0D1;
+    text-align: center;
+  }
 </style>

@@ -63,7 +63,7 @@ const apiMethods = {
     },
     apiPatch(url, data) {
       return new Promise((resolve, reject) => {
-        axios.patch(url, data)
+        axios.patch(url, {},{params:data})
           .then(resp => {
             if (resp.data.code == 200) {
               resolve(resp.data);

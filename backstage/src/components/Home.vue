@@ -1,20 +1,18 @@
 <template>
   <el-container>
-    <el-header height="80px">
-      <router-view name="header"></router-view>
-    </el-header>
+    <el-aside width="200px">
+      <router-view name="aside" style="height: 100%;"></router-view>
+    </el-aside>
     <el-container>
-      <el-aside width="200px">
-        <router-view name="aside"></router-view>
-      </el-aside>
-      <el-container>
-        <el-main>
-          <router-view name="main"></router-view>
-        </el-main>
-        <el-footer>
-          <router-view name="footer"></router-view>
-        </el-footer>
-      </el-container>
+      <el-header height="80px">
+        <router-view name="header"></router-view>
+      </el-header>
+      <el-main>
+        <router-view name="main"></router-view>
+      </el-main>
+      <el-footer>
+        <router-view name="footer"></router-view>
+      </el-footer>
     </el-container>
   </el-container>
 </template>
@@ -34,7 +32,6 @@
 </script>
 
 <style scoped>
-
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;

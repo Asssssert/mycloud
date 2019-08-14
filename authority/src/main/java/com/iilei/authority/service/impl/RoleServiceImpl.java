@@ -40,16 +40,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     public void add(RoleAdd params) {
         BeanValidator.check(params);
         Role role = DataUtils.copyProperties(params, new Role());
-        EntityWrapper<Role> wrapper = new EntityWrapper<>();
-        wrapper
-                .eq("name", params.getName())
-                .or()
-                .eq("nickname", params.getNickname())
-        ;
-        Role one = selectOne(wrapper);
-        if (one != null) {
-            throw new ParamException("该角色名称已被使用");
-        }
+        checkRole(params.getName(), params.getNickname());
         role.setCreate_time(new Date());
         role.setUpdate_time(new Date());
         insert(role);
@@ -73,9 +64,23 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     public void upd(RoleUpd params) {
         BeanValidator.check(params);
         Role role = checkById(params.getId());
+        checkRole(params.getName(), params.getNickname());
         DataUtils.copyProperties(params, role);
         role.setUpdate_time(new Date());
         updateAllColumnById(role);
+    }
+
+    private void checkRole(String name, String nickname) {
+        EntityWrapper<Role> wrapper = new EntityWrapper<>();
+        wrapper
+                .eq("name", name)
+                .or()
+                .eq("nickname", nickname)
+        ;
+        Role one = selectOne(wrapper);
+        if (one != null) {
+            throw new ParamException("该角色名称已被使用");
+        }
     }
 
     @Override
