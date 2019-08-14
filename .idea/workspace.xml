@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/account/AccountAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/account/AccountManage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/account/AccountRoleAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/account/AccountUpd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/permission/PermissionAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/permission/PermissionManage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/permission/PermissioniUpd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/role/RoleAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/role/RoleManage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/role/RolePermissionAdd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/components/apps/author/role/RoleUpd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/filter/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/filter/JWTFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/assets/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/assets/js/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/assets/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/assets/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/assets/js/mock.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/assets/js/mock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/components/account/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/components/account/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/components/common/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/components/common/Aside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/components/common/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/components/common/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/components/common/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/components/common/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/router/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/authority/target/" />
@@ -58,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="528">
+              <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -396,7 +367,7 @@
       <workItem from="1565578430188" duration="17577000" />
       <workItem from="1565659034471" duration="18079000" />
       <workItem from="1565684700468" duration="574000" />
-      <workItem from="1565688126730" duration="2992000" />
+      <workItem from="1565688126730" duration="3038000" />
     </task>
     <task id="LOCAL-00001" summary="添加md文件">
       <created>1565596162036</created>
@@ -517,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565685236332</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="修改bug">
+      <created>1565691151606</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1565691151606</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -550,11 +528,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39222000" />
+    <option name="totallyTimeSpent" value="39268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16044776" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -578,7 +555,7 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info active="true" anchor="bottom" id="Run" order="14" visible="true" weight="0.29175705" />
+      <window_info anchor="bottom" id="Run" order="14" weight="0.29175705" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -650,7 +627,8 @@
     <MESSAGE value="权限模块-session认证修改为token认证" />
     <MESSAGE value="修改初始化数据库" />
     <MESSAGE value="修改登录的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改登录的问题" />
+    <MESSAGE value="修改bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改bug" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java">
@@ -1044,8 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="528">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
         </state>
       </provider>
     </entry>
