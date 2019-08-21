@@ -1,4 +1,4 @@
-package com.iilei.authority.service;
+package com.iilei.getway.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.iilei.api.entity.Account;
@@ -14,6 +14,7 @@ import com.iilei.api.params.account.AccountUpd;
  * @since 2019-08-12
  */
 public interface IAccountService {
+
     Account findByUsername(String username);
 
     void add(AccountAdd params);

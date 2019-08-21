@@ -1,9 +1,13 @@
 package com.iilei.basicsauthority.controller;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.iilei.api.params.role.RoleAdd;
 import com.iilei.api.params.role.RoleUpd;
 import com.iilei.api.vo.ResponseData;
+import com.iilei.basicsauthority.entity.Role;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping(value = "/role")
 public interface RoleController {

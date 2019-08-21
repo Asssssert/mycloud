@@ -12,6 +12,7 @@
         <module name="config-service" />
         <module name="basic-authority" />
         <module name="eureka-service" />
+        <module name="getway" />
         <module name="authority-user" />
       </profile>
     </annotationProcessing>
@@ -34,6 +35,7 @@
       <module name="basics-authority" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
+      <module name="getway" options="-parameters" />
       <module name="mycloud" options="" />
       <module name="utils" options="-parameters" />
     </option>

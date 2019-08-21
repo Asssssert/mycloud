@@ -2,7 +2,9 @@ package com.iilei.api.vo;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +13,8 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class ResponseData {
+@ToString
+public class ResponseData implements Serializable {
     private Integer code;
     private String msg;
     private Object data;

@@ -10,8 +10,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @MapperScan(value = "com.iilei.basicsauthority.mapper")
 @SpringBootApplication
-@RefreshScope
-@EnableDiscoveryClient
 public class BasicsAuthorityApplication {
 
     public static void main(String[] args) {

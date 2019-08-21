@@ -3,6 +3,7 @@ package com.iilei.basicsauthority.controller;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.iilei.api.params.permission.PermissionAdd;
 import com.iilei.api.params.permission.PermissionUpd;
+import com.iilei.api.vo.ResponseData;
 import com.iilei.basicsauthority.entity.Permissions;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,29 +13,29 @@ import java.util.List;
 public interface PermissionController {
 
     @GetMapping(value = "/get/{id}")
-    Permissions findById(@PathVariable(value = "id") Integer id);
+    ResponseData findById(@PathVariable(value = "id") Integer id);
 
     @PostMapping(value = "/add")
-    boolean add(@RequestBody PermissionAdd params);
+    ResponseData add(@RequestBody PermissionAdd params);
 
     @DeleteMapping(value = "/del/{ids}")
-    boolean del(@PathVariable(value = "ids") Integer[] ids);
+    ResponseData del(@PathVariable(value = "ids") Integer[] ids);
 
     @PutMapping(value = "/upd")
-    boolean upd(@RequestBody PermissionUpd params);
+    ResponseData upd(@RequestBody PermissionUpd params);
 
     @GetMapping(value = "/list/page")
-    Page<Permissions> listByPage(Integer page, Integer size);
+    ResponseData listByPage(Integer page, Integer size);
 
     @GetMapping(value = "/list/page/type")
-    Page<Permissions> listByType(Integer type, Integer page, Integer size);
+    ResponseData listByType(Integer type, Integer page, Integer size);
 
     @GetMapping(value = "/list/page/pid")
-    Page<Permissions> listByPid(Integer pid, Integer page, Integer size);
+    ResponseData listByPid(Integer pid, Integer page, Integer size);
 
     @GetMapping(value = "/list")
-    List<Permissions> listAll();
+    ResponseData listAll();
 
     @GetMapping(value = "/list/rid")
-    List<Permissions> listAllByRid(Integer rid);
+    ResponseData listAllByRid(Integer rid);
 }

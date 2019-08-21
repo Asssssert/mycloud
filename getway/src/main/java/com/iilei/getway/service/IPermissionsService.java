@@ -1,4 +1,4 @@
-package com.iilei.authority.service;
+package com.iilei.getway.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.iilei.api.entity.Permissions;

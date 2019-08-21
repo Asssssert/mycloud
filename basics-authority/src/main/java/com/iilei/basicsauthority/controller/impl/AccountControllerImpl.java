@@ -3,6 +3,8 @@ package com.iilei.basicsauthority.controller.impl;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.iilei.api.params.account.AccountAdd;
 import com.iilei.api.params.account.AccountUpd;
+import com.iilei.api.utils.DataUtils;
+import com.iilei.api.vo.ResponseData;
 import com.iilei.basicsauthority.controller.AccountController;
 import com.iilei.basicsauthority.entity.Account;
 import com.iilei.basicsauthority.service.IAccountService;
@@ -17,59 +19,80 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountControllerImpl implements AccountController {
     @Autowired
     private IAccountService accountService;
+    private Account account;
+    private Page<Account> list;
 
     @Override
-    public Account findByUsername(String username) {
-        return accountService.findByUsername(username);
+    public com.iilei.api.entity.Account findByUsername(String username) {
+//        try {
+//            account = accountService.findByUsername(username);
+//        } catch (Exception e) {
+//            return ResponseData.fail(10000, e.getMessage());
+//        }
+//        System.out.println(account);
+//        return ResponseData.success(account);
+        Account account = accountService.findByUsername(username);
+        com.iilei.api.entity.Account a = DataUtils.copyProperties(account, new com.iilei.api.entity.Account());
+        return a;
     }
 
     @Override
-    public boolean add(AccountAdd params) {
+    public ResponseData add(AccountAdd params) {
         try {
             accountService.add(params);
         } catch (Exception e) {
-            return false;
+            return ResponseData.fail(10001, e.getMessage());
         }
-        return true;
+        return ResponseData.success("添加成功");
     }
 
     @Override
-    public boolean del(Integer[] ids) {
+    public ResponseData del(Integer[] ids) {
         try {
             accountService.del(ids);
         } catch (Exception e) {
-            return false;
+            return ResponseData.fail(10002, e.getMessage());
         }
-        return true;
+        return ResponseData.success("删除成功");
     }
 
     @Override
-    public boolean upd(AccountUpd params) {
+    public ResponseData upd(AccountUpd params) {
         try {
             accountService.upd(params);
         } catch (Exception e) {
-            return false;
+            return ResponseData.fail(10003, e.getMessage());
         }
-        return true;
+        return ResponseData.success("修改成功");
     }
 
     @Override
-    public Account findById(Integer id) {
-        return accountService.findById(id);
+    public ResponseData findById(Integer id) {
+        try {
+            account = accountService.findById(id);
+        } catch (Exception e) {
+            return ResponseData.fail(10004, e.getMessage());
+        }
+        return ResponseData.success(account);
     }
 
     @Override
-    public Page<Account> listByPage(Integer page, Integer size) {
-        return accountService.listByPage(page, size);
+    public ResponseData listByPage(Integer page, Integer size) {
+        try {
+            list = accountService.listByPage(page, size);
+        } catch (Exception e) {
+            return ResponseData.fail(10005, e.getMessage());
+        }
+        return ResponseData.success(list);
     }
 
     @Override
-    public boolean lock(Integer[] ids, Integer lock) {
+    public ResponseData lock(Integer[] ids, Integer lock) {
         try {
             accountService.lock(ids, lock);
         } catch (Exception e) {
-            return false;
+            return ResponseData.fail(10006, e.getMessage());
         }
-        return true;
+        return ResponseData.success("操作成功");
     }
 }

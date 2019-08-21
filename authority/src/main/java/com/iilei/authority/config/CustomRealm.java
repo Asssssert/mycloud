@@ -1,6 +1,7 @@
 package com.iilei.authority.config;
 
 import com.google.common.collect.Lists;
+import com.iilei.api.utils.JWTUtil;
 import com.iilei.authority.entity.Account;
 import com.iilei.authority.entity.*;
 import com.iilei.authority.service.*;
