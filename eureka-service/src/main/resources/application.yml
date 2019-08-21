@@ -1,0 +1,10 @@
+server:
+  port: 6379
+eureka:
+  instance:
+    hostname: eureka-service
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:6379/eureka/

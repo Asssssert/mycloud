@@ -2,12 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b099e3eb-7790-46b1-9994-eee5b1049a43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backstage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/PermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/AccountControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/PermissionControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/RoleControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/exception/ParamException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/account/AccountAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/account/AccountAddRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/account/AccountLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/account/AccountUpd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/permission/PermissionAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/permission/PermissionUpd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/role/RoleAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/role/RoleAddPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/role/RoleUpd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/BeanValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/DataUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/MpGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/PageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/vo/ResponseData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/AccountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Account_roleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/PermissionsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Role_permissionsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority/src/test/java/com/iilei/authority/AuthorityApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/authority/target/" />
     <ignored path="$PROJECT_DIR$/utils/target/" />
+    <ignored path="$PROJECT_DIR$/basics/target/" />
+    <ignored path="$PROJECT_DIR$/basic/target/" />
+    <ignored path="$PROJECT_DIR$/basics-authority/target/" />
+    <ignored path="$PROJECT_DIR$/eureka-service/target/" />
+    <ignored path="$PROJECT_DIR$/config-service/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,29 +59,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java">
+        <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/bootstrap.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            <state relative-caret-position="264">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/MyErrorController.java">
+        <entry file="file://$PROJECT_DIR$/config-service/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+            <state relative-caret-position="312">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -63,9 +94,12 @@
       <find>redisManager</find>
       <find>AuthenticationTokens</find>
       <find>AuthorizationInfo</find>
+      <find>PermissionListDto</find>
+      <find>red</find>
     </findStrings>
     <replaceStrings>
       <replace>permissionsService</replace>
+      <replace>Permissions</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -74,57 +108,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleUpd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountAdd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountUpd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRoleService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleGetDto.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/role/RoleListDto.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAdd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionAdd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionGetDto.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/dto/permission/PermissionListDto.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/permission/PermissionUpd.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IPermissionsService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountAddRole.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IAccount_roleService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Account_roleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAddPermission.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRole_permissionsService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Role_permissionsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/authority/pom.xml" />
-        <option value="$PROJECT_DIR$/authority/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/RedisManager.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/RedisCache.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisManager.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RedisService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/RedisService.java" />
-        <option value="$PROJECT_DIR$/authority/src/test/java/com/iilei/authority/AuthorityApplicationTests.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RedisServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/exception/LoginException.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/JWTToken.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/MyErrorController.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisCacheManager.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IAccountService.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisCache.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/basics/basicsauthority/mapper/Account_roleMapper.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/basics/basicsauthority/mapper/Role_permissionsMapper.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/basics/basicsauthority/mapper/RoleMapper.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/basics/basicsauthority/service/RedisService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/basics/basicsauthority/service/impl/Account_roleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/README.md" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/MpGenerator.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/params/permission/PermissionUpd.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IAccount_roleService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IRole_permissionsService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/exception/LoginException.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/BeanValidator.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/DataUtils.java" />
         <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mycloud.sql" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountLogin.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/LoginControllerImpl.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/filter/JWTFilter.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/utils/PageUtils.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IAccountService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IPermissionsService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/PermissionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IRoleService.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/Account_roleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/Role_permissionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/vo/ResponseData.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Account_roleMapper.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/AccountMapper.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/PermissionsMapper.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Role_permissionsMapper.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/mapper/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/AccountController.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/PermissionController.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/AccountControllerImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/PermissionControllerImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/RoleControllerImpl.java" />
+        <option value="$PROJECT_DIR$/eureka-service/HELP.md" />
+        <option value="$PROJECT_DIR$/eureka-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/authority/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-service/src/main/java/com/iilei/eurekaservice/EurekaServiceApplication.java" />
+        <option value="$PROJECT_DIR$/config-service/HELP.md" />
+        <option value="$PROJECT_DIR$/config-service/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/config-service/src/main/java/com/iilei/configservice/ConfigServiceApplication.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/BasicsAuthorityApplication.java" />
+        <option value="$PROJECT_DIR$/basics-authority/pom.xml" />
+        <option value="$PROJECT_DIR$/basics-authority/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/config-service/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -163,6 +197,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,12 +206,36 @@
               <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="mycloud" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,7 +247,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/authority" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/2.1.2.RELEASE/spring-cloud-starter-netflix-eureka-server-2.1.2.RELEASE.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -205,18 +265,18 @@
       <recent name="com.iilei.authority.params.permission" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.iilei.basicsauthority.vo" />
+      <recent name="com.iilei.basicsauthority.utils" />
       <recent name="com.iilei.authority.params.account" />
       <recent name="com.iilei.authority.exception" />
       <recent name="com.iilei.authority.filter" />
-      <recent name="com.iilei.authority.service.impl" />
-      <recent name="com.iilei.authority.params.permission" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\project\mycloud\authority\src\main\java\com\iilei\authority\config" />
+      <recent name="G:\project\mycloud\basics-authority\src\main\java\com\iilei\basicsauthority" />
+      <recent name="G:\project\mycloud\basics-authority\src\main\java\com\iilei\basicsauthority\controller" />
+      <recent name="G:\project\mycloud\basics-authority\src\main\resources" />
       <recent name="G:\project\mycloud" />
-      <recent name="G:\project\mycloud\authority\src\main\resources\mapper" />
-      <recent name="G:\project\mycloud\authority\src\main\java\com\iilei\authority" />
-      <recent name="G:\project\mycloud\authority" />
+      <recent name="G:\project\mycloud\basics-authority\src\main\java\com\basics\basicsauthority" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -231,7 +291,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthorityApplication">
+  <component name="RunManager" selected="Spring Boot.BasicsAuthorityApplication">
+    <configuration name="MpGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.iilei.basicsauthority.utils.MpGenerator" />
+      <module name="basics-authority" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.iilei.basicsauthority.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MpGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.iilei.authority.utils.MpGenerator" />
       <module name="authority" />
@@ -283,8 +356,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BasicsAuthorityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="basics-authority" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.basics.basicsauthority.BasicsAuthorityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicsAuthorityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="basics-authority" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iilei.basicsauthority.BasicsAuthorityApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iilei.configservice.ConfigServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iilei.eurekaservice.EurekaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MpGenerator" />
+      <item itemvalue="Application.MpGenerator (1)" />
+      <item itemvalue="JUnit.AuthorityApplicationTests" />
+      <item itemvalue="JUnit.AuthorityApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.AuthorityApplication" />
+      <item itemvalue="Spring Boot.BasicsAuthorityApplication" />
+      <item itemvalue="Spring Boot.EurekaServiceApplication" />
+      <item itemvalue="Spring Boot.ConfigServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MpGenerator (1)" />
         <item itemvalue="JUnit.AuthorityApplicationTests.contextLoads" />
         <item itemvalue="JUnit.AuthorityApplicationTests" />
         <item itemvalue="Application.MpGenerator" />
@@ -306,6 +419,9 @@
       <workItem from="1565684700468" duration="574000" />
       <workItem from="1565688126730" duration="3038000" />
       <workItem from="1565745715441" duration="46000" />
+      <workItem from="1565833407333" duration="735000" />
+      <workItem from="1566206495933" duration="2192000" />
+      <workItem from="1566352687231" duration="7302000" />
     </task>
     <task id="LOCAL-00001" summary="添加md文件">
       <created>1565596162036</created>
@@ -466,12 +582,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39314000" />
+    <option name="totallyTimeSpent" value="49543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -493,7 +609,7 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Run" order="14" weight="0.29175705" />
+      <window_info active="true" anchor="bottom" id="Run" order="14" visible="true" weight="0.30585682" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -569,399 +685,324 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改bug" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/PermissionsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/Role_permissionsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="100" column="44" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountAddRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IAccount_roleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Account_roleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="72">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/Role_permissionsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+        <state relative-caret-position="171">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IRole_permissionsService.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/impl/AccountControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/impl/UserControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/impl/RoleControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/MyErrorController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/impl/LoginControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/PermissionController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/UserControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/LoginControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/MyErrorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="-168">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/role/RoleAddPermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.10.RELEASE/spring-data-redis-2.1.10.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.7.RELEASE/spring-boot-autoconfigure-2.1.7.RELEASE.jar!/org/springframework/boot/autoconfigure/cache/RedisCacheConfiguration.class">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/vo/ResponseData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/RedisService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="29" />
-          <folding>
-            <element signature="e#563#593#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisService.java" />
-    <entry file="file://$PROJECT_DIR$/authority/src/test/java/com/iilei/authority/AuthorityApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/RedisServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-957" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/AuthorityApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/utils/JWTUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="57" column="60" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/authc/AbstractAuthenticator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="24" column="177" selection-start-line="24" selection-start-column="177" selection-end-line="24" selection-end-column="177" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/mgt/DefaultSecurityManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="46" column="197" selection-start-line="46" selection-start-column="197" selection-end-line="46" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2.jar!/org/apache/shiro/web/filter/PathMatchingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="23" column="201" selection-start-line="23" selection-start-column="201" selection-end-line="23" selection-end-column="201" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/exception/LoginException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/http/HttpStatus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1163">
-          <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.7.RELEASE/spring-boot-2.1.7.RELEASE.jar!/org/springframework/boot/web/servlet/error/ErrorController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisCacheManager.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2.jar!/org/apache/shiro/web/filter/authc/BasicHttpAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="94" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2.jar!/org/apache/shiro/web/filter/authc/AuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2.jar!/org/apache/shiro/web/filter/AccessControlFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2-sources.jar!/org/apache/shiro/web/filter/authc/BasicHttpAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2-sources.jar!/org/apache/shiro/web/filter/AccessControlFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2-sources.jar!/org/apache/shiro/web/filter/authc/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-936">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.3.2/shiro-web-1.3.2-sources.jar!/org/apache/shiro/web/filter/authc/AuthenticatingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/redis/RedisCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="110" column="42" lean-forward="true" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycloud.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1997">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/params/account/AccountLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/IAccountService.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/mapper/AccountMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/service/impl/AccountServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Account_roleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/mapper/AccountMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/LoginControllerImpl.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/mapper/PermissionsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="120">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/PermissionController.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/mapper/Role_permissionsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/PermissionControllerImpl.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/mapper/RoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/RoleControllerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/impl/AccountControllerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/AccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-384">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="120">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IPermissionsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/PermissionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/JWTToken.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/RoleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        <state relative-caret-position="720">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#239#240#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/filter/JWTFilter.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-support/2.3/mybatis-plus-support-2.3.jar!/com/baomidou/mybatisplus/service/IService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        <state relative-caret-position="144">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/CustomRealm.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/IAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="38" />
+        <state relative-caret-position="339">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/config/ShiroConfig.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/AccountControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/PermissionControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/controller/MyErrorController.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/impl/RoleControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+        <state relative-caret-position="411">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authority/src/main/java/com/iilei/authority/advice/ExceptionHandlerAdvice.java">
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/controller/AccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        <state relative-caret-position="-117">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="11" selection-start-column="11" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/com/iilei/eurekaservice/EurekaServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authority/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/HELP.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="1" selection-start-column="1" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/src/main/java/com/iilei/configservice/ConfigServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/java/com/iilei/basicsauthority/BasicsAuthorityApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basics-authority/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1015,12 +1056,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>authority</last-edited>
+          <last-edited>eureka-service</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

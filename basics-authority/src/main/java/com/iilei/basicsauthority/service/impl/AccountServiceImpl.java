@@ -1,34 +1,21 @@
-package com.iilei.authority.service.impl;
+package com.iilei.basicsauthority.service.impl;
 
-import com.auth0.jwt.JWT;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.google.common.collect.Lists;
-import com.iilei.authority.dto.account.AccountGetDto;
-import com.iilei.authority.dto.account.AccountInfoDto;
-import com.iilei.authority.dto.account.AccountListDto;
-import com.iilei.authority.entity.Account;
-import com.iilei.authority.exception.ParamException;
-import com.iilei.authority.mapper.AccountMapper;
-import com.iilei.authority.params.account.AccountAdd;
-import com.iilei.authority.params.account.AccountUpd;
-import com.iilei.authority.service.IAccountService;
-import com.iilei.authority.service.RedisService;
-import com.iilei.authority.utils.BeanValidator;
-import com.iilei.authority.utils.DataUtils;
-import com.iilei.authority.utils.JWTUtil;
-import com.iilei.authority.utils.PageUtils;
-import org.apache.shiro.authc.AccountException;
-import org.apache.shiro.authc.LockedAccountException;
+import com.iilei.basicsauthority.entity.Account;
+import com.iilei.basicsauthority.exception.ParamException;
+import com.iilei.basicsauthority.mapper.AccountMapper;
+import com.iilei.basicsauthority.params.account.AccountAdd;
+import com.iilei.basicsauthority.params.account.AccountUpd;
+import com.iilei.basicsauthority.service.IAccountService;
+import com.iilei.basicsauthority.utils.BeanValidator;
+import com.iilei.basicsauthority.utils.DataUtils;
+import com.iilei.basicsauthority.utils.PageUtils;
 import org.apache.shiro.crypto.hash.Md5Hash;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
-
-import static com.iilei.authority.utils.Constant.ACCOUNT_LOCK;
 
 /**
  * <p>
@@ -36,12 +23,10 @@ import static com.iilei.authority.utils.Constant.ACCOUNT_LOCK;
  * </p>
  *
  * @author LiLei
- * @since 2019-08-12
+ * @since 2019-08-21
  */
 @Service
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
-    @Autowired
-    private RedisService redisService;
 
     @Override
     public Account findByUsername(String username) {
@@ -49,38 +34,6 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         wrapper.eq("account", username);
         Account account = selectOne(wrapper);
         return account;
-    }
-
-    @Override
-    public AccountInfoDto getUserInfoByToken(String token) {
-        String username = JWTUtil.getUsername(token);
-        Account account = findByUsername(username);
-        AccountInfoDto dto = DataUtils.copyProperties(account, new AccountInfoDto());
-        return dto;
-    }
-
-    @Override
-    public String login(String username, String password) {
-        EntityWrapper<Account> wrapper = new EntityWrapper<>();
-        wrapper
-                .eq("account", username)
-                .eq("password", new Md5Hash(password).toString());
-        Account account = selectOne(wrapper);
-        if (account == null) {
-            throw new AccountException("用户名或密码不正确");
-        }
-        if (account.getLock() == ACCOUNT_LOCK) {
-            throw new LockedAccountException("该用户已被锁定");
-        }
-        String token = JWTUtil.sign(username, account.getPassword());
-        redisService.set(username, token, 24 * 60 * 60 * 1000);//一天
-        return token;
-    }
-
-    @Override
-    public void logout(String token) {
-        String username = JWTUtil.getUsername(token);
-        redisService.del(username, token);
     }
 
     @Override
@@ -120,23 +73,15 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         updateAllColumnById(a);
     }
 
-
     @Override
-    public AccountGetDto findById(Integer id) {
+    public Account findById(Integer id) {
         Account account = checkById(id);
-        return DataUtils.copyProperties(account, new AccountGetDto());
+        return account;
     }
 
     @Override
     public Page<Account> listByPage(Integer page, Integer size) {
         Page accounts = selectPage(PageUtils.pageSizeCheck(page, size));
-        List<Account> records = accounts.getRecords();
-        List<AccountListDto> dtoList = Lists.newArrayList();
-        records.forEach(account -> {
-            AccountListDto dto = DataUtils.copyProperties(account, new AccountListDto());
-            dtoList.add(dto);
-        });
-        accounts.setRecords(dtoList);
         accounts.setTotal(selectCount(null));
         return accounts;
     }

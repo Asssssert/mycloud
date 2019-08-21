@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Asssssert/spring-cloud-config
+          search-paths: respo
+          default-label: master
+          username: 670182350@qq.com
+          password: iamlilei1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6379/eureka/
+  instance:
+    instance-id: config-server-6001
+    prefer-ip-address: true
+server:
+  port: 6001
