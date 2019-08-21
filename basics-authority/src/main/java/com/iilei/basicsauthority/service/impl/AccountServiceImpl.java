@@ -3,16 +3,15 @@ package com.iilei.basicsauthority.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.iilei.api.exception.ParamException;
+import com.iilei.api.params.account.AccountAdd;
+import com.iilei.api.params.account.AccountUpd;
+import com.iilei.api.utils.BeanValidator;
+import com.iilei.api.utils.DataUtils;
+import com.iilei.api.utils.PageUtils;
 import com.iilei.basicsauthority.entity.Account;
-import com.iilei.basicsauthority.exception.ParamException;
 import com.iilei.basicsauthority.mapper.AccountMapper;
-import com.iilei.basicsauthority.params.account.AccountAdd;
-import com.iilei.basicsauthority.params.account.AccountUpd;
 import com.iilei.basicsauthority.service.IAccountService;
-import com.iilei.basicsauthority.utils.BeanValidator;
-import com.iilei.basicsauthority.utils.DataUtils;
-import com.iilei.basicsauthority.utils.PageUtils;
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -46,7 +45,6 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         }
         a.setCreate_time(new Date());
         a.setUpdate_time(new Date());
-        a.setPassword(new Md5Hash(a.getPassword()).toString());//加密
         insert(a);
     }
 
@@ -68,7 +66,6 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         BeanValidator.check(params);
         Account a = checkById(params.getId());
         DataUtils.copyProperties(params, a);
-        a.setPassword(new Md5Hash(a.getPassword()).toString());//加密
         a.setUpdate_time(new Date());
         updateAllColumnById(a);
     }

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="basics-authority" />
         <module name="authority" />
+        <module name="api" />
         <module name="config-service" />
         <module name="basic-authority" />
         <module name="eureka-service" />
@@ -24,6 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api" options="-parameters" />
       <module name="authority" options="-parameters" />
       <module name="authority-user" options="-parameters" />
       <module name="basic" options="-parameters" />

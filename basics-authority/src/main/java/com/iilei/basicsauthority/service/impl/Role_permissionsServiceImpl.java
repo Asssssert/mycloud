@@ -2,14 +2,14 @@ package com.iilei.basicsauthority.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.iilei.api.exception.ParamException;
+import com.iilei.api.params.role.RoleAddPermission;
+import com.iilei.api.utils.BeanValidator;
 import com.iilei.basicsauthority.entity.Permissions;
 import com.iilei.basicsauthority.entity.Role_permissions;
-import com.iilei.basicsauthority.exception.ParamException;
 import com.iilei.basicsauthority.mapper.PermissionsMapper;
 import com.iilei.basicsauthority.mapper.Role_permissionsMapper;
-import com.iilei.basicsauthority.params.role.RoleAddPermission;
 import com.iilei.basicsauthority.service.IRole_permissionsService;
-import com.iilei.basicsauthority.utils.BeanValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

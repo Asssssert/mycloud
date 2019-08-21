@@ -2,9 +2,9 @@ package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.params.role.RoleAdd;
+import com.iilei.api.params.role.RoleUpd;
 import com.iilei.basicsauthority.entity.Role;
-import com.iilei.basicsauthority.params.role.RoleAdd;
-import com.iilei.basicsauthority.params.role.RoleUpd;
 
 import java.util.List;
 

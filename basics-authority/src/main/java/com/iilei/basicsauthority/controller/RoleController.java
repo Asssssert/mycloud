@@ -1,8 +1,8 @@
 package com.iilei.basicsauthority.controller;
 
-import com.iilei.basicsauthority.params.role.RoleAdd;
-import com.iilei.basicsauthority.params.role.RoleUpd;
-import com.iilei.basicsauthority.vo.ResponseData;
+import com.iilei.api.params.role.RoleAdd;
+import com.iilei.api.params.role.RoleUpd;
+import com.iilei.api.vo.ResponseData;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(value = "/role")

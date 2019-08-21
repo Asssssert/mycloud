@@ -1,8 +1,8 @@
 package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.params.account.AccountAddRole;
 import com.iilei.basicsauthority.entity.Account_role;
-import com.iilei.basicsauthority.params.account.AccountAddRole;
 
 import java.util.List;
 

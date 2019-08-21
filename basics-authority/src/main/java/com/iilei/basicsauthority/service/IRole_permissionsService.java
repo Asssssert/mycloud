@@ -1,14 +1,14 @@
 package com.iilei.basicsauthority.service;
 
-import com.iilei.basicsauthority.entity.Role_permissions;
 import com.baomidou.mybatisplus.service.IService;
-import com.iilei.basicsauthority.params.role.RoleAddPermission;
+import com.iilei.api.params.role.RoleAddPermission;
+import com.iilei.basicsauthority.entity.Role_permissions;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author LiLei

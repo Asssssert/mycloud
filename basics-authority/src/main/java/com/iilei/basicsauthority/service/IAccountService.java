@@ -2,9 +2,9 @@ package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.params.account.AccountAdd;
+import com.iilei.api.params.account.AccountUpd;
 import com.iilei.basicsauthority.entity.Account;
-import com.iilei.basicsauthority.params.account.AccountAdd;
-import com.iilei.basicsauthority.params.account.AccountUpd;
 
 /**
  * <p>

@@ -2,9 +2,9 @@ package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.params.permission.PermissionAdd;
+import com.iilei.api.params.permission.PermissionUpd;
 import com.iilei.basicsauthority.entity.Permissions;
-import com.iilei.basicsauthority.params.permission.PermissionAdd;
-import com.iilei.basicsauthority.params.permission.PermissionUpd;
 
 import java.util.List;
 
