@@ -1,6 +1,7 @@
 package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.dto.accountrole.AccountRoleDto;
 import com.iilei.api.params.account.AccountAddRole;
 import com.iilei.basicsauthority.entity.Account_role;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @since 2019-08-21
  */
 public interface IAccount_roleService extends IService<Account_role> {
-    List<Account_role> findListByAid(Integer aid);
+    List<AccountRoleDto> findListByAid(Integer aid);
 
     void addRole(AccountAddRole params);
 

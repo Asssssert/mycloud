@@ -1,10 +1,9 @@
 package com.iilei.basicsauthority.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.iilei.api.dto.role.RoleDto;
 import com.iilei.api.params.role.RoleAdd;
 import com.iilei.api.params.role.RoleUpd;
-import com.iilei.api.vo.ResponseData;
-import com.iilei.basicsauthority.entity.Role;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,23 +11,23 @@ import java.util.List;
 @RequestMapping(value = "/role")
 public interface RoleController {
     @GetMapping(value = "/get/{id}")
-    ResponseData findById(@PathVariable(value = "id") Integer id);
+    RoleDto findById(@PathVariable(value = "id") Integer id);
 
     @PostMapping(value = "/add")
-    ResponseData add(@RequestBody RoleAdd params);
+    boolean add(@RequestBody RoleAdd params);
 
     @DeleteMapping(value = "/del/{ids}")
-    ResponseData del(@PathVariable(value = "ids") Integer[] ids);
+    boolean del(@PathVariable(value = "ids") Integer[] ids);
 
     @PutMapping(value = "/upd")
-    ResponseData upd(@RequestBody RoleUpd params);
+    boolean upd(@RequestBody RoleUpd params);
 
     @GetMapping(value = "/list/page")
-    ResponseData listByPage(Integer page, Integer size);
+    Page<RoleDto> listByPage(Integer page, Integer size);
 
     @GetMapping(value = "/list")
-    ResponseData listAll();
+    List<RoleDto> listAll();
 
     @GetMapping(value = "/list/aid")
-    ResponseData listAllByAid(Integer aid);
+    List<RoleDto> listAllByAid(Integer aid);
 }

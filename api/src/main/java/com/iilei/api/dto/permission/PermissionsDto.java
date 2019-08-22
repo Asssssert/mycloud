@@ -1,11 +1,10 @@
-package com.iilei.api.entity;
+package com.iilei.api.dto.permission;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -19,50 +18,44 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Account{
-
+public class PermissionsDto {
 
     private Integer id;
 
     /**
-     * 账号
+     * 父权限ID
      */
-    private String account;
+    private Integer parentId;
 
     /**
-     * 密码
+     * 权限类型  1、分类，2、权限
      */
-    private String password;
+    private Integer type;
 
     /**
-     * 昵称
+     * 权限名称
      */
-    private String nickname;
+    private String name;
 
     /**
-     * 真实姓名
+     * 资源编码
      */
-    private String realname;
+    private String resource;
 
     /**
-     * 状态（0启用，1锁定）
+     * 请求方法
      */
-    private Integer lock;
+    private String method;
 
     /**
-     * 性别（0男，1女）
+     * 请求地址
      */
-    private Integer sex;
+    private String url;
 
     /**
-     * 邮箱
+     * 备注
      */
-    private String email;
-
-    /**
-     * 手机
-     */
-    private String phone;
+    private String describes;
 
     /**
      * 创建时间
@@ -78,7 +71,7 @@ public class Account{
     private Date update_time;
 
     /**
-     * 账号等级
+     * 权限等级
      */
     private Integer level;
 

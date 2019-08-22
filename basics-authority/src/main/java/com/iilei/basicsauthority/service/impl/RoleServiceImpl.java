@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
+import com.iilei.api.dto.role.RoleDto;
 import com.iilei.api.exception.ParamException;
 import com.iilei.api.params.role.RoleAdd;
 import com.iilei.api.params.role.RoleUpd;
@@ -36,8 +37,11 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     private Account_roleMapper accountRoleMapper;
 
     @Override
-    public Role findById(Integer id) {
-        return selectById(id);
+    public RoleDto findById(Integer id) {
+        Role role = selectById(id);
+        RoleDto dto = DataUtils.copyProperties(role, new RoleDto());
+        return dto;
+
     }
 
     @Override
@@ -88,26 +92,40 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     }
 
     @Override
-    public Page listByPage(Integer page, Integer size) {
+    public Page<RoleDto> listByPage(Integer page, Integer size) {
         Page roles = selectPage(PageUtils.pageSizeCheck(page, size));
+        List records = roles.getRecords();
+        List<RoleDto> dtoList = Lists.newArrayList();
+        records.forEach(role -> {
+            RoleDto dto = DataUtils.copyProperties(role, new RoleDto());
+            dtoList.add(dto);
+        });
+        roles.setRecords(dtoList);
         roles.setTotal(selectCount(null));
         return roles;
     }
 
     @Override
-    public List listAll() {
+    public List<RoleDto> listAll() {
         List<Role> roles = selectList(null);
-        return roles;
+        List<RoleDto> dtoList = Lists.newArrayList();
+        roles.forEach(role -> {
+            RoleDto dto = DataUtils.copyProperties(role, new RoleDto());
+            dtoList.add(dto);
+        });
+        return dtoList;
     }
 
     @Override
-    public List listAllByAid(Integer aid) {
+    public List<RoleDto> listAllByAid(Integer aid) {
         EntityWrapper<Account_role> wrapper = new EntityWrapper<>();
         wrapper.eq("aid", aid);
         List<Account_role> ars = accountRoleMapper.selectList(wrapper);
-        List<Role> dtoList = Lists.newArrayList();
+        List<RoleDto> dtoList = Lists.newArrayList();
         ars.forEach(account_role -> {
-            dtoList.add(selectById(account_role.getRid()));
+            Role role = selectById(account_role.getRid());
+            RoleDto dto = DataUtils.copyProperties(role, new RoleDto());
+            dtoList.add(dto);
         });
         return dtoList;
     }

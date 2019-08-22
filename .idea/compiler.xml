@@ -9,11 +9,11 @@
         <module name="basics-authority" />
         <module name="authority" />
         <module name="api" />
+        <module name="authority-user" />
         <module name="config-service" />
-        <module name="basic-authority" />
         <module name="eureka-service" />
         <module name="getway" />
-        <module name="authority-user" />
+        <module name="basic-authority" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

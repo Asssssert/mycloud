@@ -2,9 +2,12 @@ package com.iilei.basicsauthority.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.google.common.collect.Lists;
+import com.iilei.api.dto.rolepermission.RolePermissionsDto;
 import com.iilei.api.exception.ParamException;
 import com.iilei.api.params.role.RoleAddPermission;
 import com.iilei.api.utils.BeanValidator;
+import com.iilei.api.utils.DataUtils;
 import com.iilei.basicsauthority.entity.Permissions;
 import com.iilei.basicsauthority.entity.Role_permissions;
 import com.iilei.basicsauthority.mapper.PermissionsMapper;
@@ -30,10 +33,16 @@ public class Role_permissionsServiceImpl extends ServiceImpl<Role_permissionsMap
     private PermissionsMapper permissionsMapper;
 
     @Override
-    public List<Role_permissions> findListByRid(Integer rid) {
+    public List<RolePermissionsDto> findListByRid(Integer rid) {
         EntityWrapper<Role_permissions> wrapper = new EntityWrapper<>();
         wrapper.eq("rid", rid);
-        return selectList(wrapper);
+        List<Role_permissions> rps = selectList(wrapper);
+        List<RolePermissionsDto> dtoList = Lists.newArrayList();
+        rps.forEach(rp -> {
+            RolePermissionsDto dto = DataUtils.copyProperties(rp, new RolePermissionsDto());
+            dtoList.add(dto);
+        });
+        return dtoList;
     }
 
     @Override

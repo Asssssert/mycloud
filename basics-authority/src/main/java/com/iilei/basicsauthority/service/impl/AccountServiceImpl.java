@@ -3,6 +3,8 @@ package com.iilei.basicsauthority.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.google.common.collect.Lists;
+import com.iilei.api.dto.account.AccountDto;
 import com.iilei.api.exception.ParamException;
 import com.iilei.api.params.account.AccountAdd;
 import com.iilei.api.params.account.AccountUpd;
@@ -15,6 +17,7 @@ import com.iilei.basicsauthority.service.IAccountService;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -28,18 +31,19 @@ import java.util.Date;
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
 
     @Override
-    public Account findByUsername(String username) {
+    public AccountDto findByUsername(String username) {
         EntityWrapper<Account> wrapper = new EntityWrapper<>();
         wrapper.eq("account", username);
         Account account = selectOne(wrapper);
-        return account;
+        AccountDto dto = DataUtils.copyProperties(account, new AccountDto());
+        return dto;
     }
 
     @Override
     public void add(AccountAdd params) {
         BeanValidator.check(params);
         Account a = DataUtils.copyProperties(params, new Account());
-        Account account = findByUsername(a.getAccount());
+        AccountDto account = findByUsername(a.getAccount());
         if (account != null) {
             throw new ParamException("该用户名已被使用");
         }
@@ -71,14 +75,21 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     }
 
     @Override
-    public Account findById(Integer id) {
+    public AccountDto findById(Integer id) {
         Account account = checkById(id);
-        return account;
+        AccountDto dto = DataUtils.copyProperties(account, new AccountDto());
+        return dto;
     }
 
     @Override
-    public Page<Account> listByPage(Integer page, Integer size) {
+    public Page<AccountDto> listByPage(Integer page, Integer size) {
         Page accounts = selectPage(PageUtils.pageSizeCheck(page, size));
+        List<AccountDto> dtoList = Lists.newArrayList();
+        accounts.getRecords().forEach(a -> {
+            AccountDto dto = DataUtils.copyProperties(a, new AccountDto());
+            dtoList.add(dto);
+        });
+        accounts.setRecords(dtoList);
         accounts.setTotal(selectCount(null));
         return accounts;
     }

@@ -1,5 +1,6 @@
-package com.iilei.api.entity;
+package com.iilei.api.dto.accountrole;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -17,7 +18,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Account_role {
+public class AccountRoleDto {
 
     private Integer id;
 
@@ -31,8 +32,17 @@ public class Account_role {
      */
     private Integer rid;
 
+    /**
+     * 创建时间
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date create_time;
 
+    /**
+     * 修改时间
+     */
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date update_time;
 
 }

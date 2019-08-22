@@ -1,11 +1,10 @@
 package com.iilei.basicsauthority.controller.impl;
 
 import com.baomidou.mybatisplus.plugins.Page;
+import com.iilei.api.dto.permission.PermissionsDto;
 import com.iilei.api.params.permission.PermissionAdd;
 import com.iilei.api.params.permission.PermissionUpd;
-import com.iilei.api.vo.ResponseData;
 import com.iilei.basicsauthority.controller.PermissionController;
-import com.iilei.basicsauthority.entity.Permissions;
 import com.iilei.basicsauthority.service.IPermissionsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,97 +19,64 @@ import java.util.List;
 public class PermissionControllerImpl implements PermissionController {
     @Autowired
     private IPermissionsService permissionsService;
-    private Permissions permissions;
-    private Page<Permissions> list;
-    private List<Permissions> all;
 
     @Override
-    public ResponseData findById(Integer id) {
-        try {
-            permissions = permissionsService.findById(id);
-        } catch (Exception e) {
-            return ResponseData.fail(20000, e.getMessage());
-        }
-        return ResponseData.success(permissions);
+    public PermissionsDto findById(Integer id) {
+        return permissionsService.findById(id);
     }
 
     @Override
-    public ResponseData add(PermissionAdd params) {
+    public boolean add(PermissionAdd params) {
         try {
             permissionsService.add(params);
         } catch (Exception e) {
-            return ResponseData.fail(20001, e.getMessage());
+            return false;
         }
-        return ResponseData.success("添加成功");
+        return true;
     }
 
     @Override
-    public ResponseData del(Integer[] ids) {
+    public boolean del(Integer[] ids) {
         try {
             permissionsService.del(ids);
         } catch (Exception e) {
-            return ResponseData.fail(20002, e.getMessage());
+            return false;
         }
-        return ResponseData.success("删除成功");
+        return true;
     }
 
     @Override
-    public ResponseData upd(PermissionUpd params) {
+    public boolean upd(PermissionUpd params) {
         try {
             permissionsService.upd(params);
         } catch (Exception e) {
-            return ResponseData.fail(10003, e.getMessage());
+            return false;
         }
-        return ResponseData.success("修改成功");
+        return true;
     }
 
     @Override
-    public ResponseData listByPage(Integer page, Integer size) {
-        try {
-            list = permissionsService.listByPage(page, size);
-        } catch (Exception e) {
-            return ResponseData.fail(10004, e.getMessage());
-        }
-        return ResponseData.success(list);
+    public Page<PermissionsDto> listByPage(Integer page, Integer size) {
+        return permissionsService.listByPage(page, size);
     }
 
     @Override
-    public ResponseData listByType(Integer type, Integer page, Integer size) {
-        try {
-            list = permissionsService.listByType(type, page, size);
-        } catch (Exception e) {
-            return ResponseData.fail(10005, e.getMessage());
-        }
-        return ResponseData.success(list);
+    public Page<PermissionsDto> listByType(Integer type, Integer page, Integer size) {
+        return permissionsService.listByType(type, page, size);
     }
 
     @Override
-    public ResponseData listByPid(Integer pid, Integer page, Integer size) {
-        try {
-            list = permissionsService.listByPid(pid, page, size);
-        } catch (Exception e) {
-            return ResponseData.fail(10006, e.getMessage());
-        }
-        return ResponseData.success(list);
+    public Page<PermissionsDto> listByPid(Integer pid, Integer page, Integer size) {
+        return permissionsService.listByPid(pid, page, size);
     }
 
     @Override
-    public ResponseData listAll() {
-        try {
-            all = permissionsService.listAll();
-        } catch (Exception e) {
-            return ResponseData.fail(10007, e.getMessage());
-        }
-        return ResponseData.success(all);
+    public List<PermissionsDto> listAll() {
+        return permissionsService.listAll();
     }
 
     @Override
-    public ResponseData listAllByRid(Integer rid) {
-        try {
-            all = permissionsService.listAllByRid(rid);
-        } catch (Exception e) {
-            return ResponseData.fail(10008, e.getMessage());
-        }
-        return ResponseData.success(all);
+    public List<PermissionsDto> listAllByRid(Integer rid) {
+        return permissionsService.listAllByRid(rid);
     }
 }

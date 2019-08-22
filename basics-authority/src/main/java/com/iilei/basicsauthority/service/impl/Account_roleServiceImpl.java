@@ -2,9 +2,12 @@ package com.iilei.basicsauthority.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.google.common.collect.Lists;
+import com.iilei.api.dto.accountrole.AccountRoleDto;
 import com.iilei.api.exception.ParamException;
 import com.iilei.api.params.account.AccountAddRole;
 import com.iilei.api.utils.BeanValidator;
+import com.iilei.api.utils.DataUtils;
 import com.iilei.basicsauthority.entity.Account_role;
 import com.iilei.basicsauthority.entity.Role;
 import com.iilei.basicsauthority.mapper.Account_roleMapper;
@@ -30,10 +33,17 @@ public class Account_roleServiceImpl extends ServiceImpl<Account_roleMapper, Acc
     private RoleMapper roleMapper;
 
     @Override
-    public List<Account_role> findListByAid(Integer aid) {
+    public List<AccountRoleDto> findListByAid(Integer aid) {
         EntityWrapper<Account_role> wrapper = new EntityWrapper<>();
         wrapper.eq("aid", aid);
-        return selectList(wrapper);
+        List<Account_role> ar = selectList(wrapper);
+        List<AccountRoleDto> dtoList = Lists.newArrayList();
+        ar.forEach(account_role -> {
+                    AccountRoleDto dto = DataUtils.copyProperties(account_role, new AccountRoleDto());
+                    dtoList.add(dto);
+                }
+        );
+        return dtoList;
     }
 
     @Override

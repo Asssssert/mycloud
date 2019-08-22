@@ -2,6 +2,7 @@ package com.iilei.basicsauthority.service;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
+import com.iilei.api.dto.role.RoleDto;
 import com.iilei.api.params.role.RoleAdd;
 import com.iilei.api.params.role.RoleUpd;
 import com.iilei.basicsauthority.entity.Role;
@@ -17,7 +18,7 @@ import java.util.List;
  * @since 2019-08-21
  */
 public interface IRoleService extends IService<Role> {
-    Role findById(Integer id);
+    RoleDto findById(Integer id);
 
     void add(RoleAdd params);
 
@@ -25,9 +26,9 @@ public interface IRoleService extends IService<Role> {
 
     void upd(RoleUpd params);
 
-    Page<Role> listByPage(Integer page, Integer size);
+    Page<RoleDto> listByPage(Integer page, Integer size);
 
-    List<Role> listAll();
+    List<RoleDto> listAll();
 
-    List<Role> listAllByAid(Integer aid);
+    List<RoleDto> listAllByAid(Integer aid);
 }

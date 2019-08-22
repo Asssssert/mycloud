@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
+import com.iilei.api.dto.permission.PermissionsDto;
 import com.iilei.api.exception.ParamException;
 import com.iilei.api.params.permission.PermissionAdd;
 import com.iilei.api.params.permission.PermissionUpd;
@@ -35,8 +36,10 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     private Role_permissionsMapper rolePermissionsMapper;
 
     @Override
-    public Permissions findById(Integer id) {
-        return selectById(id);
+    public PermissionsDto findById(Integer id) {
+        Permissions permissions = selectById(id);
+        PermissionsDto dto = DataUtils.copyProperties(permissions, new PermissionsDto());
+        return dto;
     }
 
     @Override
@@ -98,13 +101,13 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     }
 
     @Override
-    public Page<Permissions> listByPage(Integer page, Integer size) {
+    public Page<PermissionsDto> listByPage(Integer page, Integer size) {
         Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size));
         return getPermissionListDtoPage(permissionss, null);
     }
 
     @Override
-    public Page<Permissions> listByType(Integer type, Integer page, Integer size) {
+    public Page<PermissionsDto> listByType(Integer type, Integer page, Integer size) {
         EntityWrapper<Permissions> wr = new EntityWrapper<>();
         wr.eq("type", type);
         Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size), wr);
@@ -112,7 +115,7 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     }
 
     @Override
-    public Page<Permissions> listByPid(Integer pid, Integer page, Integer size) {
+    public Page<PermissionsDto> listByPid(Integer pid, Integer page, Integer size) {
         EntityWrapper<Permissions> wr = new EntityWrapper<>();
         wr.eq("parentId", pid);
         Page permissionss = selectPage(PageUtils.pageSizeCheck(page, size), wr);
@@ -120,26 +123,38 @@ public class PermissionsServiceImpl extends ServiceImpl<PermissionsMapper, Permi
     }
 
     @Override
-    public List<Permissions> listAll() {
-        List<Permissions> roles = selectList(null);
-        return roles;
+    public List<PermissionsDto> listAll() {
+        List<Permissions> pers = selectList(null);
+        List<PermissionsDto> dtoList = Lists.newArrayList();
+        pers.forEach(p -> {
+            PermissionsDto dto = DataUtils.copyProperties(p, new PermissionsDto());
+            dtoList.add(dto);
+        });
+        return dtoList;
     }
 
     @Override
-    public List<Permissions> listAllByRid(Integer rid) {
+    public List<PermissionsDto> listAllByRid(Integer rid) {
         EntityWrapper<Role_permissions> wrapper = new EntityWrapper<>();
         wrapper.eq("rid", rid);
         List<Role_permissions> ars = rolePermissionsMapper.selectList(wrapper);
-        List<Permissions> dtoList = Lists.newArrayList();
+        List<PermissionsDto> dtoList = Lists.newArrayList();
         ars.forEach(account_role -> {
             Permissions source = selectById(account_role.getPid());
-            dtoList.add(source);
+            PermissionsDto dto = DataUtils.copyProperties(source, new PermissionsDto());
+            dtoList.add(dto);
         });
         return dtoList;
     }
 
     private Page getPermissionListDtoPage(Page permissionss, EntityWrapper wr) {
         List<Permissions> records = permissionss.getRecords();
+        List<PermissionsDto> dtoList = Lists.newArrayList();
+        records.forEach(p -> {
+            PermissionsDto dto = DataUtils.copyProperties(p, new PermissionsDto());
+            dtoList.add(dto);
+        });
+        permissionss.setRecords(dtoList);
         permissionss.setTotal(selectCount(wr));
         return permissionss;
     }
