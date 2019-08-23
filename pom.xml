@@ -15,7 +15,7 @@
         <module>eureka-service</module>
         <module>config-service</module>
         <module>api</module>
-        <module>getway</module>
+        <module>gateway</module>
     </modules>
 
     <parent>

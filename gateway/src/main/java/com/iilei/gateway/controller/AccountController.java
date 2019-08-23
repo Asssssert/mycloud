@@ -1,7 +1,6 @@
-package com.iilei.getway.controller;
+package com.iilei.gateway.controller;
 
-import com.baomidou.mybatisplus.plugins.Page;
-import com.iilei.api.entity.Account;
+import com.iilei.api.vo.ResponseData;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface AccountController {
 
     @GetMapping(value = "/test")
-    Account findByUsername(String username);
+    ResponseData findByUsername(String username);
 
 }

@@ -7,13 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="basics-authority" />
+        <module name="gateway" />
         <module name="authority" />
         <module name="api" />
-        <module name="authority-user" />
         <module name="config-service" />
-        <module name="eureka-service" />
-        <module name="getway" />
         <module name="basic-authority" />
+        <module name="eureka-service" />
+        <module name="authority-user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,7 +35,7 @@
       <module name="basics-authority" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
-      <module name="getway" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="mycloud" options="" />
       <module name="utils" options="-parameters" />
     </option>

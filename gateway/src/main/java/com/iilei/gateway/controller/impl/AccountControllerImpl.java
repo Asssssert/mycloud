@@ -1,10 +1,8 @@
-package com.iilei.getway.controller.impl;
+package com.iilei.gateway.controller.impl;
 
-import com.baomidou.mybatisplus.plugins.Page;
-import com.iilei.api.entity.Account;
-import com.iilei.api.service.AuthorityService;
-import com.iilei.getway.controller.AccountController;
-import com.iilei.getway.service.IAccountService;
+import com.iilei.api.vo.ResponseData;
+import com.iilei.gateway.controller.AccountController;
+import com.iilei.gateway.service.IAccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class AccountControllerImpl implements AccountController {
-//    @Autowired
+    //    @Autowired
 //    private AuthorityService authorityService;
     @Autowired
     private IAccountService accountService;
 
     @Override
-    public Account findByUsername(String username) {
-        return accountService.findByUsername(username);
+    public ResponseData findByUsername(String username) {
+        return ResponseData.success(accountService.findByUsername(username));
     }
 
 }
