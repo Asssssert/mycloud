@@ -1,0 +1,20 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6379/eureka/
+  instance:
+    instance-id: getway-8888
+    prefer-ip-address: true
+spring:
+  application:
+    name: getway
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mycloud?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+server:
+  port: 8888
+feign:
+  hystrix:
+    enabled: true
