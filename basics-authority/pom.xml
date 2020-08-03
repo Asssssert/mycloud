@@ -29,6 +29,8 @@
             <groupId>com.iilei</groupId>
             <artifactId>api</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${basedir}\lib\api-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
     <build>
@@ -38,8 +40,9 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.iilei.authority.AuthorityApplication</mainClass>
+                    <mainClass>com.iilei.basicsauthority.BasicsAuthorityApplication</mainClass>
                     <layout>ZIP</layout>
+                    <classifier>exec</classifier>
                 </configuration>
                 <executions>
                     <execution>
@@ -48,13 +51,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <classifier>exec</classifier>
-                </configuration>
             </plugin>
         </plugins>
     </build>
